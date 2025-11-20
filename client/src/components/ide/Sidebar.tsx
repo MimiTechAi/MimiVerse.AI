@@ -1,4 +1,4 @@
-import { useState } from "react";
+import * as React from "react";
 import { FileNode, getFileIcon } from "@/lib/file-system";
 import { ChevronRight, ChevronDown, MoreHorizontal, FolderPlus, FilePlus, RefreshCw, GitBranch, Copy, Trash2, Edit2 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -26,7 +26,7 @@ interface FileTreeItemProps {
 }
 
 function FileTreeItem({ node, level, onSelect, activeFileId }: FileTreeItemProps) {
-  const [isOpen, setIsOpen] = useState(node.isOpen);
+  const [isOpen, setIsOpen] = React.useState(node.isOpen);
   const Icon = getFileIcon(node.name, node.type);
   const hasChildren = node.children && node.children.length > 0;
 

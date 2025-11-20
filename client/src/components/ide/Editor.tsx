@@ -1,5 +1,5 @@
 import Editor, { OnMount } from "@monaco-editor/react";
-import { useRef, useState, useEffect } from "react";
+import * as React from "react";
 import { FileNode, getFileIcon } from "@/lib/file-system";
 import { X, Command, Sparkles, Plus, FolderOpen, GitBranch, Settings, ExternalLink, LayoutTemplate } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -23,11 +23,11 @@ export function EditorArea({
   onSelectFile,
   onContentChange
 }: EditorAreaProps) {
-  const editorRef = useRef<any>(null);
-  const [aiInputVisible, setAiInputVisible] = useState(false);
+  const editorRef = React.useRef<any>(null);
+  const [aiInputVisible, setAiInputVisible] = React.useState(false);
 
   // Listen for Cmd+K
-  useEffect(() => {
+  React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
