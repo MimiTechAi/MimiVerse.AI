@@ -6,7 +6,9 @@ import {
   Settings, 
   User,
   Box,
-  Sparkles
+  Sparkles,
+  Globe,
+  Activity
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -22,7 +24,10 @@ export function ActivityBar({ activeView, setActiveView }: ActivityBarProps) {
     { id: 'git', icon: GitGraph, label: 'Source Control' },
     { id: 'debug', icon: Play, label: 'Run and Debug' },
     { id: 'extensions', icon: Box, label: 'Extensions' },
-    { id: 'ai', icon: Sparkles, label: 'AI Assistant', highlight: true },
+    { type: 'separator' },
+    { id: 'ai', icon: Sparkles, label: 'MIMI Agent', highlight: true, color: 'text-purple-400' },
+    { id: 'browser', icon: Globe, label: 'Neural Browser', color: 'text-blue-400' },
+    { id: 'graph', icon: Activity, label: 'Cognitive Graph', color: 'text-green-400' },
   ];
 
   const bottomItems = [
@@ -31,41 +36,52 @@ export function ActivityBar({ activeView, setActiveView }: ActivityBarProps) {
   ];
 
   return (
-    <div className="w-12 h-full bg-[hsl(var(--activity-bar))] flex flex-col justify-between z-20 border-r border-[hsl(var(--sidebar-border))]">
-      <div className="flex flex-col">
-        {topItems.map((item) => (
-          <button
-            key={item.id}
-            className={cn(
-              "w-12 h-12 flex items-center justify-center text-[hsl(var(--activity-bar-foreground))] hover:text-[hsl(var(--activity-bar-active))] transition-all relative group",
-              activeView === item.id && "text-[hsl(var(--activity-bar-active))]",
-              item.highlight && "text-purple-400 hover:text-purple-300"
-            )}
-            onClick={() => setActiveView(item.id)}
-            title={item.label}
-          >
-            {activeView === item.id && (
-              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[hsl(var(--sidebar-primary))]" />
-            )}
-            {item.highlight && (
-               <div className="absolute inset-0 bg-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            )}
-            <item.icon 
-              size={24} 
-              strokeWidth={1.5} 
-              className={cn(item.highlight && activeView === item.id && "animate-pulse")}
-            />
-          </button>
-        ))}
+    <div className="w-14 h-full bg-[#18181B] flex flex-col justify-between z-20 border-r border-[hsl(var(--sidebar-border))] py-2">
+      <div className="flex flex-col gap-1 px-1">
+        {topItems.map((item, i) => {
+          if (item.type === 'separator') {
+            return <div key={i} className="h-[1px] bg-white/10 mx-2 my-2" />;
+          }
+          
+          const ItemIcon = item.icon as any;
+          return (
+            <button
+              key={item.id}
+              className={cn(
+                "w-12 h-12 flex items-center justify-center rounded-xl transition-all relative group",
+                activeView === item.id 
+                  ? "bg-white/10 text-white" 
+                  : "text-[hsl(var(--activity-bar-foreground))] hover:bg-white/5 hover:text-white",
+                item.highlight && !activeView.includes(item.id!) && "text-purple-400"
+              )}
+              onClick={() => item.id && setActiveView(item.id)}
+              title={item.label}
+            >
+              {activeView === item.id && (
+                <div className="absolute left-0 top-3 bottom-3 w-[3px] bg-purple-500 rounded-r-full" />
+              )}
+              
+              <ItemIcon 
+                size={22} 
+                strokeWidth={1.5} 
+                className={cn(
+                  "transition-transform group-hover:scale-110",
+                  item.highlight && activeView === item.id && "animate-pulse text-purple-400",
+                  item.color && activeView === item.id && item.color
+                )}
+              />
+            </button>
+          );
+        })}
       </div>
-      <div className="flex flex-col pb-2">
+      <div className="flex flex-col pb-2 gap-1 px-1">
         {bottomItems.map((item) => (
           <button
             key={item.id}
-            className="w-12 h-12 flex items-center justify-center text-[hsl(var(--activity-bar-foreground))] hover:text-[hsl(var(--activity-bar-active))] transition-colors"
+            className="w-12 h-12 flex items-center justify-center rounded-xl text-[hsl(var(--activity-bar-foreground))] hover:bg-white/5 hover:text-white transition-all"
             title={item.label}
           >
-            <item.icon size={24} strokeWidth={1.5} />
+            <item.icon size={22} strokeWidth={1.5} />
           </button>
         ))}
       </div>

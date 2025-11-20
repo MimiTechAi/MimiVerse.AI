@@ -68,62 +68,64 @@
 }
 
 :root {
-  /* Dark Theme by Default (as requested) */
-  --background: 0 0% 11.8%; /* #1E1E1E */
-  --foreground: 0 0% 94.1%; /* #F0F0F0 */
+  /* Cosmic Dark Theme (Mimiverse.ai) */
+  /* Base background is a very deep charcoal/black, almost void-like */
+  --background: 240 10% 3.9%; /* #09090b */
+  --foreground: 0 0% 98%; /* #fafafa */
   
-  --card: 0 0% 14.5%; /* #252526 */
-  --card-foreground: 0 0% 94.1%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
   
-  --popover: 0 0% 14.5%;
-  --popover-foreground: 0 0% 94.1%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
   
-  --primary: 207 100% 40%; /* #007ACC - VS Code Blue */
+  /* Primary Accent: Cosmic Purple */
+  --primary: 270 95% 60%; /* #9333EA */
   --primary-foreground: 0 0% 100%;
   
-  --secondary: 0 0% 18%;
-  --secondary-foreground: 0 0% 94.1%;
+  --secondary: 240 4% 16%;
+  --secondary-foreground: 0 0% 98%;
   
-  --muted: 0 0% 18%;
-  --muted-foreground: 0 0% 63.9%;
+  --muted: 240 4% 16%;
+  --muted-foreground: 240 5% 64.9%;
   
-  --accent: 0 0% 22%;
-  --accent-foreground: 0 0% 100%;
+  --accent: 270 50% 20%; /* Muted purple for hover states */
+  --accent-foreground: 0 0% 98%;
   
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 100%;
   
-  --border: 0 0% 18%;
-  --input: 0 0% 18%;
-  --ring: 207 100% 40%;
+  --border: 240 4% 16%;
+  --input: 240 4% 16%;
+  --ring: 270 95% 60%;
   
   --radius: 0.5rem;
   
-  /* IDE Specific Colors */
-  --sidebar: 0 0% 14.5%; /* #252526 */
-  --sidebar-foreground: 0 0% 80%;
-  --sidebar-primary: 207 100% 40%;
+  /* IDE Specific Colors - Mimiverse Palette */
+  --sidebar: 240 10% 3.9%; /* #09090b */
+  --sidebar-foreground: 240 5% 64.9%;
+  --sidebar-primary: 270 95% 60%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 0 0% 22%;
+  --sidebar-accent: 240 4% 16%;
   --sidebar-accent-foreground: 0 0% 100%;
-  --sidebar-border: 0 0% 10%;
-  --sidebar-ring: 207 100% 40%;
+  --sidebar-border: 240 4% 16%;
+  --sidebar-ring: 270 95% 60%;
 
-  --activity-bar: 0 0% 20%; /* #333333 */
-  --activity-bar-foreground: 0 0% 60%;
-  --activity-bar-active: 0 0% 94.1%;
+  --activity-bar: 240 10% 3.9%; /* #09090b - same as sidebar for seamless look */
+  --activity-bar-foreground: 240 5% 64.9%;
+  --activity-bar-active: 0 0% 98%;
   
-  --status-bar: 207 100% 40%; /* #007ACC */
+  --status-bar: 270 95% 60%; /* Purple Status Bar */
   --status-bar-foreground: 0 0% 100%;
   
-  --editor-bg: 0 0% 11.8%; /* #1E1E1E */
-  --editor-fg: 0 0% 94.1%;
-  --editor-line-highlight: 0 0% 18%;
+  --editor-bg: 240 10% 3.9%; /* #09090b */
+  --editor-fg: 0 0% 98%;
+  --editor-line-highlight: 240 4% 16%;
   
-  --tab-active-bg: 0 0% 11.8%; /* Matches editor */
-  --tab-active-fg: 0 0% 94.1%;
-  --tab-inactive-bg: 0 0% 18%; /* #2D2D2D */
-  --tab-inactive-fg: 0 0% 60%;
+  --tab-active-bg: 240 10% 3.9%;
+  --tab-active-fg: 0 0% 98%;
+  --tab-inactive-bg: 240 6% 10%; /* Slightly lighter than bg */
+  --tab-inactive-fg: 240 5% 64.9%;
 }
 
 @layer base {
@@ -146,11 +148,21 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted-foreground) / 0.3);
+  background: hsl(var(--muted-foreground) / 0.2);
   border-radius: 5px;
   border: 2px solid hsl(var(--background));
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground) / 0.5);
+  background: hsl(var(--muted-foreground) / 0.4);
+}
+
+/* Utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
