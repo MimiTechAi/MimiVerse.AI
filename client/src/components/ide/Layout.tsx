@@ -7,6 +7,7 @@ import { StatusBar } from "./StatusBar";
 import { Header } from "./Header";
 import { Preview } from "./Preview";
 import { CommandPalette } from "./CommandPalette";
+import { AIChat } from "./AIChat";
 import { useState, useEffect } from "react";
 import { FileNode, INITIAL_FILES } from "@/lib/file-system";
 
@@ -63,7 +64,7 @@ export function IDELayout() {
   };
 
   return (
-    <div className="h-screen w-screen flex flex-col bg-[hsl(var(--background))] text-[hsl(var(--foreground))] overflow-hidden">
+    <div className="h-screen w-screen flex flex-col bg-[hsl(var(--background))] text-[hsl(var(--foreground))] overflow-hidden font-sans">
       <Header />
       <CommandPalette />
       
@@ -86,7 +87,10 @@ export function IDELayout() {
                 activeFileId={activeFileId}
               />
             )}
-            {activeView !== 'explorer' && (
+             {activeView === 'ai' && (
+              <AIChat />
+            )}
+            {activeView !== 'explorer' && activeView !== 'ai' && (
               <div className="p-4 text-sm text-[hsl(var(--muted-foreground))]">
                 {activeView} view not implemented in this mockup.
               </div>

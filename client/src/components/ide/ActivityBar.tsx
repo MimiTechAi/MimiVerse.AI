@@ -5,7 +5,8 @@ import {
   Play, 
   Settings, 
   User,
-  Box
+  Box,
+  Sparkles
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -21,6 +22,7 @@ export function ActivityBar({ activeView, setActiveView }: ActivityBarProps) {
     { id: 'git', icon: GitGraph, label: 'Source Control' },
     { id: 'debug', icon: Play, label: 'Run and Debug' },
     { id: 'extensions', icon: Box, label: 'Extensions' },
+    { id: 'ai', icon: Sparkles, label: 'AI Assistant', highlight: true },
   ];
 
   const bottomItems = [
@@ -35,8 +37,9 @@ export function ActivityBar({ activeView, setActiveView }: ActivityBarProps) {
           <button
             key={item.id}
             className={cn(
-              "w-12 h-12 flex items-center justify-center text-[hsl(var(--activity-bar-foreground))] hover:text-[hsl(var(--activity-bar-active))] transition-colors relative",
-              activeView === item.id && "text-[hsl(var(--activity-bar-active))]"
+              "w-12 h-12 flex items-center justify-center text-[hsl(var(--activity-bar-foreground))] hover:text-[hsl(var(--activity-bar-active))] transition-all relative group",
+              activeView === item.id && "text-[hsl(var(--activity-bar-active))]",
+              item.highlight && "text-purple-400 hover:text-purple-300"
             )}
             onClick={() => setActiveView(item.id)}
             title={item.label}
@@ -44,7 +47,14 @@ export function ActivityBar({ activeView, setActiveView }: ActivityBarProps) {
             {activeView === item.id && (
               <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[hsl(var(--sidebar-primary))]" />
             )}
-            <item.icon size={24} strokeWidth={1.5} />
+            {item.highlight && (
+               <div className="absolute inset-0 bg-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            )}
+            <item.icon 
+              size={24} 
+              strokeWidth={1.5} 
+              className={cn(item.highlight && activeView === item.id && "animate-pulse")}
+            />
           </button>
         ))}
       </div>
