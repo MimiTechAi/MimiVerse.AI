@@ -87,20 +87,20 @@ export function Hero() {
                                 <DropdownMenuLabel>Select Platform</DropdownMenuLabel>
                                 <DropdownMenuSeparator className="bg-[#333]" />
 
-                                <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.location.href = 'https://github.com/MimiTechAi/MimiVerse.AI/releases/latest/download/Mimiverse-1.0.0.dmg'}>
-                                    <Apple className="mr-2 h-4 w-4" /> macOS (Intel & Silicon)
+                                <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.location.href = 'https://github.com/MimiTechAi/MimiVerse.AI/releases/latest/download/Mimiverse.dmg'}>
+                                    <Apple className="mr-2 h-4 w-4" /> macOS (Apple Silicon & Intel)
                                 </DropdownMenuItem>
 
                                 <DropdownMenuSeparator className="bg-[#333]" />
 
-                                <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.location.href = 'https://github.com/MimiTechAi/MimiVerse.AI/releases/latest/download/Mimiverse-Setup-1.0.0.exe'}>
+                                <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.location.href = 'https://github.com/MimiTechAi/MimiVerse.AI/releases/latest/download/Mimiverse-1.0.0.Setup.exe'}>
                                     <Monitor className="mr-2 h-4 w-4" /> Windows
                                 </DropdownMenuItem>
 
                                 <DropdownMenuSeparator className="bg-[#333]" />
 
                                 <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.location.href = 'https://github.com/MimiTechAi/MimiVerse.AI/releases/latest/download/mimiverse_1.0.0_amd64.deb'}>
-                                    <Terminal className="mr-2 h-4 w-4" /> Linux (Direct)
+                                    <Terminal className="mr-2 h-4 w-4" /> Linux (.deb)
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
                         </DropdownMenu>
