@@ -5,7 +5,8 @@ export type NodeType = 'file' | 'folder';
 export interface FileNode {
   id: string;
   name: string;
-  type: NodeType;
+  type: 'file' | 'folder';
+  path?: string;
   children?: FileNode[];
   content?: string;
   language?: string;

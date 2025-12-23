@@ -1,0 +1,23 @@
+[
+  {
+    "id": "local-mcp:filesystem",
+    "serverId": "local-mcp",
+    "name": "filesystem",
+    "description": "Filesystem MCP tools (e.g. list/read/write files via Docker MCP Catalog)",
+    "enabled": false
+  },
+  {
+    "id": "local-mcp:http",
+    "serverId": "local-mcp",
+    "name": "http",
+    "description": "HTTP MCP tools (e.g. fetch URLs or call APIs via Docker MCP Catalog)",
+    "enabled": false
+  },
+  {
+    "id": "local-mcp:git",
+    "serverId": "local-mcp",
+    "name": "git",
+    "description": "Git MCP tools (e.g. inspect repositories or PRs via Docker MCP Catalog)",
+    "enabled": false
+  }
+]

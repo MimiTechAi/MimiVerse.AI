@@ -1,0 +1,132 @@
+{
+    "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+    "build": {
+        "beforeBuildCommand": "npm run build",
+        "beforeDevCommand": "npm run dev:client",
+        "devPath": "http://localhost:5000",
+        "distDir": "../dist"
+    },
+    "package": {
+        "productName": "Mimiverse",
+        "version": "1.0.0"
+    },
+    "tauri": {
+        "allowlist": {
+            "all": false,
+            "shell": {
+                "all": false,
+                "open": true
+            },
+            "dialog": {
+                "all": false,
+                "open": true,
+                "save": true
+            },
+            "fs": {
+                "all": true,
+                "readFile": true,
+                "writeFile": true,
+                "readDir": true,
+                "copyFile": true,
+                "createDir": true,
+                "removeDir": true,
+                "removeFile": true,
+                "renameFile": true,
+                "exists": true,
+                "scope": [
+                    "$APP/**",
+                    "$HOME/**",
+                    "$RESOURCE/**"
+                ]
+            },
+            "path": {
+                "all": true
+            },
+            "process": {
+                "all": true,
+                "exit": true,
+                "relaunch": true
+            },
+            "window": {
+                "all": true,
+                "center": true,
+                "close": true,
+                "create": true,
+                "hide": true,
+                "maximize": true,
+                "minimize": true,
+                "requestUserAttention": true,
+                "setAlwaysOnTop": true,
+                "setDecorations": true,
+                "setFocus": true,
+                "setFullscreen": true,
+                "setIcon": true,
+                "setMaxSize": true,
+                "setMinSize": true,
+                "setPosition": true,
+                "setResizable": true,
+                "setSize": true,
+                "setSkipTaskbar": true,
+                "setTitle": true,
+                "show": true,
+                "startDragging": true,
+                "unmaximize": true,
+                "unminimize": true
+            }
+        },
+        "bundle": {
+            "active": true,
+            "category": "DeveloperTool",
+            "copyright": "© 2024 Mimi Tech AI",
+            "deb": {
+                "depends": []
+            },
+            "externalBin": [],
+            "icon": [
+                "icons/32x32.png",
+                "icons/128x128.png",
+                "icons/128x128@2x.png",
+                "icons/icon.icns",
+                "icons/icon.ico"
+            ],
+            "identifier": "ai.mimiverse.ide",
+            "longDescription": "Mimiverse is an AI-powered IDE that provides intelligent code assistance, automatic testing, and smart debugging features.",
+            "macOS": {
+                "entitlements": null,
+                "exceptionDomain": "",
+                "frameworks": [],
+                "providerShortName": null,
+                "signingIdentity": null
+            },
+            "resources": [],
+            "shortDescription": "AI-Powered IDE",
+            "targets": "all",
+            "windows": {
+                "certificateThumbprint": null,
+                "digestAlgorithm": "sha256",
+                "timestampUrl": ""
+            }
+        },
+        "security": {
+            "csp": null
+        },
+        "updater": {
+            "active": false
+        },
+        "windows": [
+            {
+                "fullscreen": false,
+                "height": 900,
+                "resizable": true,
+                "title": "Mimiverse IDE",
+                "width": 1400,
+                "minWidth": 1024,
+                "minHeight": 768,
+                "center": true,
+                "decorations": true,
+                "transparent": false,
+                "titleBarStyle": "Overlay"
+            }
+        ]
+    }
+}

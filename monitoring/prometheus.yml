@@ -1,0 +1,22 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  # NVIDIA DCGM Exporter - GPU Metriken
+  - job_name: 'dcgm'
+    static_configs:
+      - targets: ['dcgm-exporter:9400']
+        labels:
+          instance: 'dgx-spark'
+          environment: 'development'
+
+  # Node Exporter (optional - System Metriken)
+  - job_name: 'node'
+    static_configs:
+      - targets: ['localhost:9100']
+
+  # Redis Exporter (optional - Cache Metriken)
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['localhost:9121']

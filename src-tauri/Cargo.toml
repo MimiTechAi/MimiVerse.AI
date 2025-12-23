@@ -1,0 +1,34 @@
+[package]
+name = "mimiverse-ide"
+version = "1.0.0"
+description = "AI-Powered IDE for Modern Development"
+authors = ["Mimi Tech AI <hello@mimiverse.ai>"]
+license = "MIT"
+repository = ""
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "1.5", features = [] }
+
+[dependencies]
+tauri = { version = "1.5", features = ["shell-open", "dialog-open", "dialog-save", "fs-all", "path-all", "process-all", "window-all"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+walkdir = "2.4"
+notify = "6.1"
+sha2 = "0.10"
+hex = "0.4"
+rayon = "1.8"
+tree-sitter = "0.20"
+tree-sitter-typescript = "0.20"
+tree-sitter-rust = "0.20"
+lsp-types = "0.94"
+log = "0.4"
+env_logger = "0.10"
+anyhow = "1.0"
+thiserror = "1.0"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]

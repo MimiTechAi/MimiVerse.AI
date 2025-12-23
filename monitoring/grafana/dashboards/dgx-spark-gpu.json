@@ -1,0 +1,83 @@
+{
+  "dashboard": {
+    "title": "DGX Spark - GPU Monitoring",
+    "tags": ["nvidia", "dgx", "gpu"],
+    "timezone": "browser",
+    "panels": [
+      {
+        "id": 1,
+        "title": "GPU Utilization (%)",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "DCGM_FI_DEV_GPU_UTIL",
+            "legendFormat": "GPU {{gpu}}"
+          }
+        ],
+        "yaxes": [
+          {
+            "label": "Utilization %",
+            "format": "percent",
+            "min": 0,
+            "max": 100
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "GPU Memory Usage (GB)",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "DCGM_FI_DEV_FB_USED / 1024",
+            "legendFormat": "GPU {{gpu}} Used"
+          },
+          {
+            "expr": "DCGM_FI_DEV_FB_FREE / 1024",
+            "legendFormat": "GPU {{gpu}} Free"
+          }
+        ],
+        "yaxes": [
+          {
+            "label": "Memory GB",
+            "format": "decgbytes"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "GPU Temperature (°C)",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "DCGM_FI_DEV_GPU_TEMP",
+            "legendFormat": "GPU {{gpu}}"
+          }
+        ],
+        "yaxes": [
+          {
+            "label": "Temperature °C",
+            "format": "celsius"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "GPU Power Draw (W)",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "DCGM_FI_DEV_POWER_USAGE",
+            "legendFormat": "GPU {{gpu}}"
+          }
+        ],
+        "yaxes": [
+          {
+            "label": "Power W",
+            "format": "watt"
+          }
+        ]
+      }
+    ]
+  }
+}

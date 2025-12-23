@@ -26,7 +26,11 @@ import {
   CommandShortcut,
 } from "@/components/ui/command";
 
-export function CommandPalette() {
+interface CommandPaletteProps {
+  onCommand?: (commandId: string) => void;
+}
+
+export function CommandPalette({ onCommand }: CommandPaletteProps = {}) {
   const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
@@ -47,17 +51,17 @@ export function CommandPalette() {
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Suggestions">
-          <CommandItem>
+          <CommandItem onSelect={() => { onCommand?.('search'); setOpen(false); }}>
             <Search className="mr-2 h-4 w-4" />
             <span>Search files</span>
             <CommandShortcut>⌘P</CommandShortcut>
           </CommandItem>
-          <CommandItem>
+          <CommandItem onSelect={() => { onCommand?.('format'); setOpen(false); }}>
             <Code className="mr-2 h-4 w-4" />
             <span>Format Document</span>
             <CommandShortcut>⇧⌥F</CommandShortcut>
           </CommandItem>
-          <CommandItem>
+          <CommandItem onSelect={() => { onCommand?.('terminal'); setOpen(false); }}>
             <Terminal className="mr-2 h-4 w-4" />
             <span>Toggle Terminal</span>
             <CommandShortcut>⌘`</CommandShortcut>
@@ -65,12 +69,12 @@ export function CommandPalette() {
         </CommandGroup>
         <CommandSeparator />
         <CommandGroup heading="File">
-          <CommandItem>
+          <CommandItem onSelect={() => { onCommand?.('file:new'); setOpen(false); }}>
             <Plus className="mr-2 h-4 w-4" />
             <span>New File</span>
             <CommandShortcut>⌘N</CommandShortcut>
           </CommandItem>
-          <CommandItem>
+          <CommandItem onSelect={() => { onCommand?.('file:saveAll'); setOpen(false); }}>
             <File className="mr-2 h-4 w-4" />
             <span>Save All</span>
             <CommandShortcut>⌘S</CommandShortcut>
@@ -78,11 +82,11 @@ export function CommandPalette() {
         </CommandGroup>
         <CommandSeparator />
         <CommandGroup heading="Git">
-          <CommandItem>
+          <CommandItem onSelect={() => { onCommand?.('git:commit'); setOpen(false); }}>
             <GitBranch className="mr-2 h-4 w-4" />
             <span>Commit Changes</span>
           </CommandItem>
-          <CommandItem>
+          <CommandItem onSelect={() => { onCommand?.('git:pull'); setOpen(false); }}>
             <RefreshCw className="mr-2 h-4 w-4" />
             <span>Pull from Remote</span>
           </CommandItem>

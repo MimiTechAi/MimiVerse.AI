@@ -1,0 +1,1726 @@
+Skip to main content
+- 
+      [English](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Deutsch](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Español](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Español – América Latina](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Français](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Indonesia](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Italiano](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Polski](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Português – Brasil](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Tiếng Việt](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Türkçe](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Русский](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [עברית](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [العربيّة](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [فارسی](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [हिंदी](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [বাংলা](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [ภาษาไทย](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [中文 – 简体](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [中文 – 繁體](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [日本語](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [한국어](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+[English](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Deutsch](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Español](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Español – América Latina](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Français](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Indonesia](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Italiano](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Polski](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Português – Brasil](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Tiếng Việt](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Türkçe](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Русский](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[עברית](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[العربيّة](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[فارسی](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[हिंदी](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[বাংলা](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[ภาษาไทย](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[中文 – 简体](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[中文 – 繁體](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[日本語](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[한국어](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+## 1. Introduction
+
+In this codelab, you will learn about [Google Antigravity](https://antigravity.google/) (referred as Antigravity for the rest of the document), an agentic development platform, evolving the IDE into the agent-first era.
+Unlike standard coding assistants that just autocomplete lines, Antigravity provides a "Mission Control" for managing autonomous agents that can plan, code, and even browse the web to help you build.
+Antigravity is designed as an "agent-first" platform. It presupposes that the AI is not just a tool for writing code but an autonomous actor capable of planning, executing, validating, and iterating on complex engineering tasks with minimal human intervention.
+
+### What you'll learn
+- Installing and configuring Antigravity
+- Exploring key concepts of Antigravity like Agent Manager, Editor, Browser and more
+- Exploring a few use cases with Antigravity
+
+### What you'll need
+Currently Antigravity is available as a preview for personal Gmail accounts. It comes with a free quota to use premier models.
+Antigravity needs to be locally installed on your system. The product is available on Mac, Windows and specific Linux distributions. In addition to your own machine, you would need the following:
+- Chrome web browser
+- A Gmail account (Personal Gmail account).
+This codelab, designed for users and developers of all levels (including beginners).
+
+### Reporting issues
+As you work through the codelab and with Antigravity, you might encounter problems.
+For codelab related issues (typos, wrong instructions), please open a bug with Report a mistake button in bottom left corner of this codelab:
+
+```
+Report a mistake
+```
+
+For bugs or feature requests related to Antigravity, please report the issue within Antigravity. You can do this in Agent Manager with the Provide Feedback link in the bottom left corner:
+
+```
+Provide Feedback
+```
+
+You can also go to the editor with the Report Issue link under your profile icon:
+
+```
+Report Issu
+```
+
+## 2. Installation
+
+We will begin with installing Antigravity. Currently the product is available for preview and you can use your personal Gmail account to get started with it.
+Go to the [downloads](https://antigravity.google/download) page and click on the appropriate operating system version that is applicable to your case. Launch the application installer and install the same on your machine. Once you have completed the installation, launch the Antigravity application. You should see a screen similar to the following:
+Please proceed with clicking on Next each time. Key steps are detailed below:
+
+```
+Next
+```
+
+- Choose setup flow: This brings up the option for you to import from your existing VS Code or Cursor settings. We will go with a fresh start.
+- Choose an Editor theme type: We will go with the dark theme but it's entirely up to you.
+- How do you want to use Antigravity agent:
+
+```
+Choose setup flow
+```
+
+
+```
+:
+```
+
+
+```
+Choose an Editor theme type:
+```
+
+
+```
+How do you want to use Antigravity agent
+```
+
+Let's understand this in a bit more detail and remember that it is not set in stone and can be changed at any time, even as you interact with the Agent.
+Before we delve into the options, let us look at two specific properties here (which you see to the right of the dialog).
+
+### Terminal Execution policy
+This is about giving the Agent the ability to execute commands (applications/tools) in your terminal. There are three options over here.
+- Off: Never auto-execute terminal commands (except those in a configurable Allow list)
+- Auto: Agent decides whether to auto-execute any given terminal command. In case it needs to get your permission, it will decide and ask you for it.
+- Turbo: Always auto-execute terminal commands (except those in a configurable Deny list)
+
+```
+Off
+```
+
+
+```
+Auto
+```
+
+
+```
+Turbo
+```
+
+### Review policy
+As the Agent goes about its task, it creates various artifacts (task plan, implementation plan, etc). The review policy is set such that you can determine who decides if it needs to be reviewed. Should you always want to review it, or let the agent decide on this. Accordingly, there are three options here too.
+- Always Proceed: Agent never asks for review
+- Agent Decides: Agent will decide when to ask for review
+- Request Review: Agent always asks for review
+
+```
+Always Proceed
+```
+
+
+```
+Agent Decides
+```
+
+
+```
+Request Review
+```
+
+Now that we have understood this, the 4 options are nothing but specific presets for the Terminal execution and review policies for 3 of them and a 4th option available where we can completely custom control it. These 4 options are available so that we can choose how much autonomy you want to give to the Agent to execute commands in the terminal and get artifacts reviewed before moving ahead with the task.
+These 4 options are:
+- Agent-driven development
+- Agent-assisted development
+- Review-driven development
+- Custom configuration
+The Agent-assisted development option is a good balance and the recommended one since it allows the Agent to make a decision and come back to the user for approval.
+Pick your choice and for now, let's go with the recommended approach.
+- Configure your Editor: Choose your preferences.
+- Sign in to Google: As mentioned earlier, Antigravity is available in preview mode and free if you have a personal Gmail account. Sign in now with your account. Ensure that you let a new Chrome Profile get created for this. This will open up the browser allowing you to sign in. On successful authentication, you will see a message similar to the one below and it will lead you back to the Antigravity application. Go with the flow.
+- Terms of Use: You can make a decision if you'd like to opt-in or not and then click on Next.
+
+```
+Configure your Editor
+```
+
+
+```
+Sign in to Google
+```
+
+
+```
+Terms of Use
+```
+
+
+```
+Next
+```
+
+This will lead you to the moment of truth, where Antigravity will be waiting to collaborate with you.
+
+## 3. Agent Manager
+
+We are ready to get started!
+Antigravity forks the open-source Visual Studio Code (VS Code) foundation but radically alters the user experience to prioritize agent management over text editing. The interface is bifurcated into two distinct primary windows: the Editor and the Agent Manager. This separation of concerns mirrors the distinction between individual contribution and engineering management.
+
+```
+Editor
+```
+
+
+```
+Agent Manager
+```
+
+## Agent Manager: Mission Control
+
+Upon launching Antigravity, the user is typically greeted not by a file tree, but by the Agent Manager, as shown below:
+This interface acts as a Mission Control dashboard. It is designed for high-level orchestration, allowing developers to spawn, monitor, and interact with multiple agents operating asynchronously across different workspaces or tasks.
+
+```
+Mission Control
+```
+
+In this view, the developer acts as an architect. They define high-level objectives, examples could be:
+- Refactor the authentication module
+- Update the dependency tree
+- Generate a test suite for the billing API
+As the diagram above indicates, each of these requests spawns a dedicated agent instance. The UI provides a visualization of these parallel work streams, displaying the status of each agent, the Artifacts they have produced (plans, results, diffs), and any pending requests for human approval.
+This architecture addresses a key limitation of previous IDEs that had more of a chatbot experience, which were linear and synchronous. In a traditional chat interface, the developer must wait for the AI to finish generating code before asking the next question. In Antigravity's Manager View, a developer can dispatch five different agents to work on five different bugs simultaneously, effectively multiplying their throughput.
+If you click on Next above, you have the option to open a workspace.
+
+```
+Next
+```
+
+Think of workspace as you knew from VS Code and you will be done. So we can open up a local folder by clicking on the button and then selecting a folder to start with. In my case, I had a folder in my home folder named my-agy-projects and I selected that. You can use a completely different folder. Note, you can completely skip this step if you'd like and you can open up a workspace at any time later too.
+
+```
+my-agy-projects
+```
+
+Once you complete this step, you will be in the Agent Manager window, which is shown below:
+You will notice that the application is immediately geared to start a new conversation in the workspace folder (my-agy-projects) that was selected. You can use your existing knowledge of working with other AI applications (Cursor, Gemini CLI) and use @ and other ways to include additional context while prompting.
+
+```
+my-agy-projects
+```
+
+
+```
+@
+```
+
+Do look at both the Planning and the Model Selection dropdowns. The Model Selection dropdown allows you to choose from one of the models available at the moment, for your Agent to use. The list is shown below:
+
+```
+Planning
+```
+
+
+```
+Model Selection
+```
+
+Similarly, we find that the Agent is going to be in a default Planning mode. But we can also go for the Fast mode.
+
+```
+Planning
+```
+
+
+```
+Fast
+```
+
+Let's look at what the [documentation](https://antigravity.google/docs/agent-modes-settings) says on this:
+- Planning: An Agent can plan before executing tasks. Use for deep research, complex tasks, or collaborative work. In this mode, the Agent organizes its work in task groups, produces Artifacts, and takes other steps to thoroughly research, think through, and plan its work for optimal quality. You will see a lot more output here.
+- Fast: An Agent will execute tasks directly. Use for simple tasks that can be completed faster, such as renaming variables, kicking off a few bash commands, or other smaller, localized tasks. This is helpful for when speed is an important factor, and the task is simple enough that there is low worry of worse quality.
+
+```
+Planning
+```
+
+
+```
+Fast
+```
+
+If you are familiar with the thinking budget and similar terms in agents, think of this as the ability to control the thinking of the agent, thereby having a direct impact on the thinking budget. We will go with the defaults for now but do remember that at the time of the launch, Gemini 3 Pro model availability is as per limited quotas to everyone, so do expect appropriate messages indicating if you have exhausted those free quotas for Gemini 3 usage.
+Let's spend a bit of time now on the Agent Manager (window) here and understand a few things, so that it's clear about the basic building blocks, how you navigate in Antigravity and more. The Agent Manager window is produced below:
+Please refer to the above diagram with the numbers:
+
+## Agent Manager: Mission Control
+1. Inbox: Think of this as a way to track all your conversations in one place. As you send Agents off on their tasks, these will appear in the Inbox and you can click on the Inbox to get a list of all the current conversations. Tapping on any of the conversations will lead you to all the messages that have been exchanged, status of the tasks, what the Agent has produced or even if it is waiting for an approval from your side on the tasks. This is a great way to come back later to a previous task that you were working on. A very handy feature.
+2. Start Conversation: Click on this to begin a new conversation. This will directly lead you to the input where it says Ask anything.
+3. Workspaces: We mentioned about Workspaces and that you can work across any workspace that you want. You can add more workspaces at any time and can select any workspace while starting the conversation.
+4. Playground: This is a great way by which you can simply start a conversation with the agent and then if you'd like to convert that into a workspace, where you have stricter control over the files, etc. Think of this as a scratch area.
+5. Editor View: So far we are in the Agent Manager view. You can switch at any time to the Editor view, if you'd like. This will show you your workspace folder and any files generated. You can directly edit the files there, or even provide inline guidance, command in the editor, so that the Agent can do something or change as per your modified recommendations/instructions. We will cover the Editor View in detail in a later section.
+6. Browser: Finally, we come to one of the clear differentiators that makes Antigravity very powerful and that is its close integration with the Chrome browser.  Let's get going with setting up the browser in the next section.
+
+```
+Inbox
+```
+
+
+```
+Start Conversation
+```
+
+
+```
+Ask anything
+```
+
+
+```
+Workspaces
+```
+
+
+```
+Playground
+```
+
+
+```
+Editor View
+```
+
+
+```
+Browser
+```
+
+## 4. Antigravity Browser
+As per the [documentation](https://antigravity.google/docs/browser-subagent), when the agent wants to interact with the browser, it invokes a browser subagent to handle the task at hand. The browser subagent runs a model specialized to operate on the pages that are open within the Antigravity-managed browser, which is different from the model you selected for the main agent.
+This subagent has access to a variety of tools that are necessary to control your browser, including clicking, scrolling, typing, reading console logs, and more. It can also read your open pages through DOM capture, screenshots, or markdown parsing, as well as taking videos.
+This means that we need to launch and install the Antigravity browser extension. Let's do that by actually starting a conversation in the Playground and going through the steps.
+Select Playground and give the following task go to antigravity.google to the Agent as shown below:
+
+```
+Playground
+```
+
+
+```
+go to antigravity.google
+```
+
+Submit the task. You will see the agent analyzing the task and you can inspect the thought process. At some point, it will correctly proceed and mention that it needs to set up the browser agent as shown below. Click on Setup.
+
+```
+Setup
+```
+
+This will bring up the browser and display a message to install the extension as shown below:
+Go ahead and you will be led to the Chrome Extension that you can then install.
+Once you successfully install the extension, Antigravity Agent will get to work and indicate that it is expecting you to allow it permission to do its task. You should see some activity in the browser window that has been opened:
+Switch back the Agent Manager view and you should see the following:
+This is exactly what we expected to happen since we asked the Agent to go and visit the antigravity.google website. Give it the permission and you will find that the website was safely navigated to, as shown below:
+
+```
+antigravity.google
+```
+
+## 5. Artifacts
+Antigravity creates Artifacts as it plans and gets its work done as a way to communicate its work and get feedback from the human user. These are rich markdown files, architecture diagrams, images, browser recordings, code diffs, and so on.
+Artifacts solve the "Trust Gap". When an agent claims, "I have fixed the bug" the developer previously had to read the code to verify. In Antigravity, the agent produces an artifact to prove it.
+These are the main artifacts produced by Antigravity:
+- Task Lists: Before writing code, the agent generates a structured plan. You don't typically need to edit this plan but you can review it and in some cases, add a comment to change it, if needed.
+- Implementation Plan: This is used to architect changes within your codebase to accomplish a task. These plans contain technical details on what revisions are necessary and are meant to be reviewed by the user, unless you have your artifact review policy set to "Always Proceed".
+- Walkthrough: This is created once the agent has completed task implementation, as a summary of the changes and how to test them.
+- Code diffs: While technically not an artifact, Antigravity also produces code diffs that you can review and comment on.
+- Screenshots: The agent captures the state of the UI before and after a change.
+- Browser Recordings: For dynamic interactions (e.g., "Click the login button, wait for the spinner, verify the dashboard loads"), the agent records a video of its session. The developer can watch this video to verify that the functional requirement is met without running the app themselves.
+
+```
+Task Lists
+```
+
+
+```
+Implementation Plan
+```
+
+
+```
+Walkthrough
+```
+
+
+```
+Code diffs
+```
+
+
+```
+Screenshots
+```
+
+
+```
+Browser Recordings
+```
+
+Artifacts are produced and appear in both the Agent Manager and Editor views.
+In the Editor view, on the bottom right corner, you can click on Artifacts:
+
+```
+Artifacts
+```
+
+In the Agent Manager view, on the top right, next to Review changes, you should be able to see a button to toggle the artifacts or if it's toggled on, you can see the generated artifacts list:
+
+```
+Review changes
+```
+
+You should see the Artifacts view as shown below. In our case here, we instructed the Agent to visit the antigravity.google page and hence it has captured the screenshot, created a video of the same:
+
+```
+antigravity.google
+```
+
+You can see code diffs in Review Changes in the Editor view:
+
+```
+Review Changes
+```
+
+Developers can interact with these artifacts and code diffs using "Google Docs-style comments." You can select a specific action or task, provide a command the way you would like it to be and then submit that to the agent. The agent will then ingest this feedback and iterate accordingly. Think about using interactive Google Docs, where you provide feedback to the author and the author then reiterates on that.
+
+## 6. Revisit the Inbox
+If you have started a few conversations with the Agents, you should now take a look at your Inbox in the Agent Manager window. This will show you all the conversations. Click on any of the conversations to see the history of that conversation, the artifacts produced and more. In our case, after we ran the first conversation, our Inbox shows the conversation listed, as shown below:
+
+```
+Inbox
+```
+
+
+```
+Agent Manager
+```
+
+Clicking on that conversation will provide you the details:
+You can continue the conversation from here too.
+
+## 7. Editor
+The editor retains the familiarity of VS Code, ensuring that the muscle memory of seasoned developers is respected. It includes the standard file explorer, syntax highlighting, and extensions ecosystem.
+You can click on the Open Editor button right on the top right in Agent Manager to go to the Editor.
+
+```
+Open Editor
+```
+
+## Setup and Extensions
+In a typical setup, you'd have the editor, the terminal, and the agent visible:
+If this is not the case, you can toggle terminal and agent panels as follows:
+- To toggle the terminal panel, use the `Ctrl + `` shortcut.
+- To toggle the agent panel, use the Cmd + L shortcut.
+
+```
+Cmd + L
+```
+
+Additionally, Antigravity can install some extensions during setup but depending on the programming language you're using, you probably need to install more extensions. For example, for Python development, these are the extensions you might choose to install:
+
+### Auto-complete
+As you type code in the editor, a smart auto-complete kicks in that you can simply tab in:
+
+### Tab to import
+You get tab to import suggestion to add missing dependencies:
+
+### Tab to jump
+You get tab to jump suggestions to get the cursor to the next logical place in the code:
+
+### Commands
+You can trigger commands with Cmd + I in the editor or terminal for inline completions using natural language.
+
+```
+Cmd + I
+```
+
+In the editor, you can ask for a method to calculate Fibonacci numbers and then accept or reject it:
+In the terminal, you can get terminal command suggestions:
+
+## Agent Side Panel
+
+From the editor, you can toggle the agent side panel in multiple ways.
+
+### Manual open
+You can manually toggle the agent panel on the right with the Cmd + L shortcut.
+
+```
+Cmd + L
+```
+
+You can start asking questions, use @ to include more context such as files, directories, MCP servers, or use / to refer to a workflow (a saved prompt):
+
+```
+@
+```
+
+
+```
+/
+```
+
+You can also choose between two conversation modes: Fast or Planning :
+
+```
+Fast
+```
+
+
+```
+Planning
+```
+
+Fast is recommended for quick tasks whereas Planning is recommended for more complex tasks where the agent creates a plan that you can approve.
+
+```
+Fast
+```
+
+
+```
+Planning
+```
+
+You can also choose different models for the conversation:
+
+### Explain and fix
+Another way of triggering the agent is to hover over a problem and selecting Explain and fix:
+
+```
+Explain and fix
+```
+
+### Send problems to agent
+You can also go to the Problems section and select Send all to Agent to get the agent to try to fix those problems:
+
+```
+Problems
+```
+
+
+```
+Send all to Agent
+```
+
+### Send terminal output to agent
+You can even select a part of the terminal output and send it to the agent with Cmd + L:
+
+```
+Cmd + L
+```
+
+## Toggling between Editor and Agent Manager
+At any point, you can switch between the editor mode and the full agent manager mode via the Open Agent Manager button on the top right when you are in editor mode and back by clicking on the Open Editor button on the top right when you are in the agent manager mode.
+
+```
+Open Agent Manager
+```
+
+
+```
+Open Editor
+```
+
+Alternately, you also use Cmd + E keyboard shortcut to toggle between the two modes.
+
+```
+Cmd + E
+```
+
+## 8. Rules and Workflows
+Antigravity comes with a couple of customization options: Rules and Workflows.
+Click on the ... on the top right corner and choose Customizations, you will see Rules and Workflows:
+
+```
+...
+```
+
+
+```
+Customizations
+```
+
+
+```
+Rules
+```
+
+
+```
+Workflows
+```
+
+Rules help guide the behavior of the agent. These are guidelines you can provide to make sure the agent follows as it generates code and tests. For example, you might want the agent to follow a certain code style, or to always document methods. You can add these as rules and the agent will take them into account.
+Workflows are saved prompts that you can trigger on demand with /, as you interact with the agent. They also guide the behavior of the agent but they're triggered by the user on demand.
+
+```
+/
+```
+
+A good analogy is that Rules are more like system instructions whereas Workflows are more like saved prompts that you can choose on demand.
+Both Rules and Workflows can be applied globally or per workspace and saved to the following locations:
+- Global rule: ~/.gemini/GEMINI.md
+- Global workflow: ~/.gemini/antigravity/global_workflows/global-workflow.md
+- Workspace rules: your-workspace/.agent/rules/
+- Workspace workflows: your-workspace/.agent/workflows/
+
+```
+~/.gemini/GEMINI.md
+```
+
+
+```
+~/.gemini/antigravity/global_workflows/global-workflow.md
+```
+
+
+```
+your-workspace/.agent/rules/
+```
+
+
+```
+your-workspace/.agent/workflows/
+```
+
+Let's add some rules and workflows in the workspace.
+
+## Add a rule
+First, let's add a code style rule. Go to Rules and select the +Workspace button. Give it a name such as code-style-guide with the following code style rules:
+
+```
+Rules
+```
+
+
+```
++Workspace
+```
+
+
+```
+code-style-guide
+```
+
+
+```
+* Make sure all the code is styled with PEP 8 style guide * Make sure all the code is properly commented
+```
+
+
+```
+* Make sure all the code is styled with PEP 8 style guide * Make sure all the code is properly commented
+```
+
+Second, let's add another rule to make sure the code is generated in a modular way with examples in a code-generation-guide rule:
+
+```
+code-generation-guide
+```
+
+
+```
+* The main method in main.py is the entry point to showcase functionality. * Do not generate code in the main method. Instead generate distinct functionality in a new file (eg. feature_x.py) * Then, generate example code to show the new functionality in a new method in main.py (eg. example_feature_x) and simply call that method from the main method.
+```
+
+
+```
+* The main method in main.py is the entry point to showcase functionality. * Do not generate code in the main method. Instead generate distinct functionality in a new file (eg. feature_x.py) * Then, generate example code to show the new functionality in a new method in main.py (eg. example_feature_x) and simply call that method from the main method.
+```
+
+The two rules are saved and ready:
+
+## Add a workflow
+Let's also define a workflow to generate unit tests. This will allow us to trigger unit tests once we're happy with the code (rather than the agent generating unit tests all the time).
+Go to Workflows and select the +Workspace button. Give it a name such as generate-unit-tests with the following:
+
+```
+Workflows
+```
+
+
+```
++Workspace
+```
+
+
+```
+generate-unit-tests
+```
+
+
+```
+* Generate unit tests for each file and each method * Make sure the unit tests are named similar to files but with test_ prefix
+```
+
+
+```
+* Generate unit tests for each file and each method * Make sure the unit tests are named similar to files but with test_ prefix
+```
+
+The workflow is also ready to go now:
+
+## Try it out
+Let's now see rules and workflows in action. Create a skeleton main.py file in your workspace:
+
+```
+main.py
+```
+
+
+```
+def main(): pass if __name__ == "__main__": main()
+```
+
+
+```
+def main(): pass if __name__ == "__main__": main()
+```
+
+Now, go to the agent chat window and ask the agent: Implement binary search and bubble sort.
+
+```
+Implement binary search and bubble sort.
+```
+
+After a minute or two, you should get three files in the workspace: main.py, bubble_sort.py, binary_search.py. You'll also notice that all the rules are implemented: the main file is not cluttered and has the example code, each feature is implemented in its own file, all the code is documented and in good style:
+
+```
+main.py
+```
+
+
+```
+bubble_sort.py
+```
+
+
+```
+binary_search.py
+```
+
+
+```
+from binary_search import binary_search, binary_search_recursive from bubble_sort import bubble_sort, bubble_sort_descending def example_binary_search(): """ Demonstrate binary search algorithm with various test cases. """ ... def example_bubble_sort(): """ Demonstrate bubble sort algorithm with various test cases. """ ... def main(): """ Main entry point to showcase functionality. """ example_binary_search() example_bubble_sort() print("\n" + "=" * 60) if __name__ == "__main__": main()
+```
+
+
+```
+from binary_search import binary_search, binary_search_recursive from bubble_sort import bubble_sort, bubble_sort_descending def example_binary_search(): """ Demonstrate binary search algorithm with various test cases. """ ... def example_bubble_sort(): """ Demonstrate bubble sort algorithm with various test cases. """ ... def main(): """ Main entry point to showcase functionality. """ example_binary_search() example_bubble_sort() print("\n" + "=" * 60) if __name__ == "__main__": main()
+```
+
+Now that we're happy with the code, let's see if we can trigger the generate unit test workflow.
+Go to the chat and start typing /generate and Antigravity already knows about our workflow:
+
+```
+/generate
+```
+
+Select generate-unit-tests and enter. After a few seconds, you'll get new files in your workspace: test_binary_search.py, test_bubble_sort.py with a number of tests already implemented!
+
+```
+generate-unit-tests
+```
+
+
+```
+test_binary_search.py
+```
+
+
+```
+test_bubble_sort.py
+```
+
+Nice!
+
+## 9. Securing the Agent
+Giving an AI agent access to your terminal and browser is a double-edged sword. It enables autonomous debugging and deployment but also opens vectors for Prompt Injection and Data Exfiltration.
+Antigravity addresses this through a granular permission system revolving around Terminal Command Auto Execution policies, Allow Lists, and Deny Lists.
+When you first configure Antigravity, or via the settings menu, you must select a Terminal Command Auto Execution policy. This setting dictates the agent's autonomy regarding shell commands.
+
+```
+Terminal Command Auto Execution
+```
+
+You can view your current settings for this by going to Antigravity — Settings, then Advanced Settings. You should see the Terminal section for the Agent settings. Keep this table in mind, should you want to change this setting to something else:
+
+```
+Antigravity — Settings
+```
+
+
+```
+Advanced Settings
+```
+
+
+```
+Terminal
+```
+
+Policy Mode
+Description
+Off
+The agent never auto-executes terminal commands unless explicitly allowed.
+Auto
+The agent decides whether to execute based on internal safety models. It asks for permission for risky commands.
+Turbo
+The agent always auto-executes commands unless explicitly denied.
+
+## Configuring the Allow List
+The Allow List is used primarily with the Off policy. It represents a positive security model, meaning everything is forbidden unless expressly permitted. This is the most secure configuration.
+
+### Step-by-Step Configuration
+1. Set the Terminal Command Auto Execution setting to Off.
+2. Add the following command in the Allow List Terminal Commands by clicking on the Add button next to it : ls -al . You can add other terminal commands too, if you'd like.
+
+```
+ls -al
+```
+
+### Testing the Allow List
+- Ask the agent: List the files in this directory.
+- The agent runs ls automatically.
+- Ask the agent: Delete the <some file>
+- The agent will attempt rm <filepath>, but Antigravity will block it and force a user review because rm is not in the allow list. You should have Antigravity asking you for permission before running the command.
+
+```
+List the files in this directory
+```
+
+
+```
+ls
+```
+
+
+```
+Delete the <some file>
+```
+
+
+```
+rm <filepath>
+```
+
+
+```
+rm
+```
+
+Note: You might need to restart Antigravity for the allow list to take effect.
+
+## Configuring the Deny List
+
+The Deny List is the safeguard for the Turbo (and sometimes Auto) policy. It represents a negative security model, meaning everything is allowed unless expressly forbidden. This relies on the developer anticipating every possible danger, which is a risky proposition, but one that offers maximum speed.
+
+### Step-by-Step Configuration
+1. Set the Terminal Command Auto Execution setting to Turbo.
+2. Add the following commands in the Deny List Terminal Commands by clicking on the Add button next to it.
+3. rm
+4. rmdir
+5. sudo
+6. curl
+7. wget
+
+### Testing the Deny List
+- Ask the agent: Check the version of python.
+- The agent runs python --version automatically.
+- Ask the agent: Download  [www.google.com](http://www.google.com/) home page.
+- The agent attempts to curl. Antigravity detects curl in the denylist and blocks execution, prompting you for manual approval.
+
+```
+Check the version of python
+```
+
+
+```
+python --version
+```
+
+
+```
+Download
+```
+
+[www.google.com](http://www.google.com/)
+
+```
+www.google.com
+```
+
+
+```
+home page
+```
+
+
+```
+curl
+```
+
+
+```
+curl
+```
+
+Note: You might need to restart Antigravity for the deny list to take effect.
+
+## Browser Security
+Antigravity's ability to browse the web is a superpower, but also a vulnerability. An agent visiting a compromised documentation site could encounter a prompt injection attack.
+To help prevent this, you can implement a Browser URL Allowlist for the browser agent.
+You can view your current settings for this by going to Antigravity — Settings and then Advanced Settings. You should see the Browser URL Allowlist section for the Browser settings as shown below:
+
+```
+Antigravity — Settings
+```
+
+
+```
+Advanced Settings
+```
+
+Click on the Open Allowlist File and that opens up the file in the folder HOME/.gemini/antigravity/browserAllowlist.txt. You can ensure that only trusted domains are entered over here.
+
+```
+HOME/.gemini/antigravity/browserAllowlist.txt.
+```
+
+## 10. Use Cases
+Now that we have a basic understanding of the product, let's dive into a few use cases to see it in action. Note that Antigravity is an Agent first platform. This means that in most cases, we are simply giving an instruction to the Agent and the Agent then goes off on its own, does its task, asks permissions if needed, produces the artifacts and then notifies us if the task is done. As a result of that, we cannot produce every single output of the Agent conversation in each of the following use cases. We will share the instructions and a few necessary screenshots of the expected results but your results might differ a bit.
+The use cases that we will cover range from automating a few tasks with external sites, to generating and verifying unit test cases for a project, to a full web site development. Let's go.
+
+## News Highlights
+This is a simple use case but it can be the basis via which you can use the web browser to visit web sites, extract information, do some actions and then return data to the user.
+In this case, we are going to visit the Google News site and extract some information from there. But you can easily experiment with a site of your choice and see how it goes.
+Ensure that you are in the Agent Manager and have selected the Playground, as shown below:
+
+```
+Agent Manager
+```
+
+
+```
+Playground
+```
+
+Then give the following instruction:
+This will kick off the Agent process and it will determine that it needs to launch the browser, etc. You should pay close attention to the Thinking process and see how the Agent goes about its work. If all goes well, it should launch the Antigravity browser and visit the site as shown below. The blue border around the site shows that the Agent is now controlling the browser and navigating the site to get the information.
+Once it's done with its work, you should also see the Artifacts getting generated, as shown below:
+A sample execution by the Agent is shown below:
+Notice that on the left, we have the Thought process, you can also scroll through the points and view the playback and other data.
+
+### Things to try out
+
+- Once you understand this, pick a website that is available and which you would like the Agent to go and get/summarize some data from. Consider some website that you know has Dashboards and charts and ask it to pick a few values.
+- Try the following prompt: Visit https://docs.cloud.google.com/release-notes and get me a summary of the release notes, categorized by product.
+
+```
+Visit https://docs.cloud.google.com/release-notes and get me a summary of the release notes, categorized by product.
+```
+
+## Generate a Dynamic Website with Python + Flask
+
+Let's move now to generate a complete web application. The web application that we are going to create is a site which provides information on a 1-day technical event, which has talks across the day by multiple speakers.
+Once again, ensure that you are in the Agent Manager and have selected the Playground.
+
+```
+Agent Manager
+```
+
+
+```
+Playground
+```
+
+Give the following prompt:
+
+```
+I would like to generate a website that is a 1-day technical conference informational site. The website should have the following functionality: 1. A home page that shows the current date, location, schedule and time table. 2. The 1-day event is a list of 8 talks in total. 3. Each talk has 1 or 2 max. speakers. 4. A talk has an ID, Title, Speakers, Category (1 or 2), Description and time of the talk. 5. Each speaker has a First Name, Last Name and LinkedIn url. 6. Allow for users to search by category, speaker, title. 7. Give a lunch break of 60 minutes. 8. Use dummy data for events and speakers, come up with a schedule, the event is about Google Cloud Technologies. 9. Tech Stack: Python and Flask framework on server side. Front-end is basic HTML, CSS and JavaScript. 10. Test out the site on your own for all functionality and provide a detailed README on how to setup, run and make any further changes. 11. Launch the web application for me to review.
+```
+
+
+```
+I would like to generate a website that is a 1-day technical conference informational site. The website should have the following functionality: 1. A home page that shows the current date, location, schedule and time table. 2. The 1-day event is a list of 8 talks in total. 3. Each talk has 1 or 2 max. speakers. 4. A talk has an ID, Title, Speakers, Category (1 or 2), Description and time of the talk. 5. Each speaker has a First Name, Last Name and LinkedIn url. 6. Allow for users to search by category, speaker, title. 7. Give a lunch break of 60 minutes. 8. Use dummy data for events and speakers, come up with a schedule, the event is about Google Cloud Technologies. 9. Tech Stack: Python and Flask framework on server side. Front-end is basic HTML, CSS and JavaScript. 10. Test out the site on your own for all functionality and provide a detailed README on how to setup, run and make any further changes. 11. Launch the web application for me to review.
+```
+
+You can begin the conversation by giving the above prompt:
+As the Agent goes about its task, it will proceed with creating the artifacts:
+- Task Artifact
+- Implementation Artifact
+- Walkthrough Artifact
+The Task Artifact given below was the initial sequence of tasks that the Agent deciphered it should do based on the task given to it. A sample screenshot from the execution is shown below:
+You can then click on the Implementation Plan artifact. A sample screenshot is shown below:
+And finally, you have the Walkthrough artifact. It contains all that the Agent did as shown below:
+Notice that it has started the server and has provided me the URL, which I click and I have the application, a sample screenshot is shown below:
+If I switch to the Editor, notice in the screen that it contains the folder where the Python Flask application is generated. You will also notice that the Agent mode is tagged to the right and you can continue the conversation over there too.
+
+```
+Agent mode
+```
+
+Now, let's say that we want to add some more talks to the event. We can stay in the Editor and in the Agent panel, give an instruction like Add two more talks to the schedule.
+
+```
+Add two more talks to the schedule
+```
+
+This will result in the Agent analyzing the requirement, updating the Task, Implementation Plan and then validating the updated functionality too. A sample conversation is shown below:
+You can switch back to the Agent Manager if you'd like. This process should help you understand the process between shifting from Agent Manager to Editor, making changes accordingly and so on.
+Note: While executing this task, the agent tried to start the Flask Server on port 5000, which was in use on the current machine. It kept attempting the next free port, till it decided to use 8080 and it was able to start the server.
+
+### Things to try out
+
+- Add additional functionality that you would like to the application. Provide the details to the Agent and notice how it goes about its task by first modifying the task list, then implementation plan and so on.
+- Ask the Agent to generate a README or more documentation for the application.
+
+## Generate a simple productivity app
+
+We are going to now generate a simple Pomodoro timer web application.
+Ensure that you are in the Agent Manager and have selected the Playground. Give the following prompt:
+
+```
+Agent Manager
+```
+
+
+```
+Playground
+```
+
+
+```
+Create a productivity app that features a Pomodoro timer. Give a calm and aesthetic look to the application.
+```
+
+
+```
+Create a productivity app that features a Pomodoro timer. Give a calm and aesthetic look to the application.
+```
+
+Notice how it goes about creating the Task list, implementation plan and then goes about that. Keep paying attention to the flow, there might be situations in which it will prompt for your review. A sample run is shown below.
+In this case, it should also launch the Antigravity browser, do its own testing and then confirm that the tests succeeded. One of the things that it generated was a Media Artifact that contains the video of its verification. This is a great way to see what it tested. I also suggested some style changes since it didn't take effect and it was able to do that.
+The final app looked like the one below and it looks quite good.
+How about we can add a nice timer image to the application. All we need to do is issue a follow up instruction as given below:
+Add an image to the application that displays a timer.
+
+```
+Add an image to the application that displays a timer.
+```
+
+This resulted in the agent adding a new task to the Task artifact:
+It then generated an image as it went through its task:
+Finally, the app had the image as we requested:
+
+### Things to try out
+
+- Notice the background for the hourglass icon in the application is not transparent. Try telling the agent to make that transparent.
+- Try out a few variations of any application that you would like to generate. Play with the styles, images, ask for changes, etc.
+
+## Generate Unit Tests, Mock Stubs and Validate Tests
+
+The final use case that we will try here is that of generating unit tests for a specific code file that we have and for the Agent to also execute the tests and validate them.
+For this, we are going to have a workspace that has a single Python file as shown below:
+
+```
+from typing import Dict # --- Custom Exceptions --- class InventoryShortageError(Exception): """Raised when there is not enough item stock.""" pass class PaymentFailedError(Exception): """Raised when the payment gateway rejects the transaction.""" pass class InvalidOrderError(Exception): """Raised when the order violates business rules.""" pass # --- External Service Interfaces (To be Mocked) --- class InventoryService: def get_stock(self, product_id: str) -> int: """Connects to DB to check stock.""" raise NotImplementedError("Real connection required") def decrement_stock(self, product_id: str, quantity: int): """Connects to DB to reduce stock.""" raise NotImplementedError("Real connection required") class PaymentGateway: def charge(self, amount: float, currency: str) -> bool: """Connects to Stripe/PayPal.""" raise NotImplementedError("Real connection required") # --- Main Business Logic --- class Order: def __init__(self, inventory_service: InventoryService, payment_gateway: PaymentGateway, customer_email: str, is_vip: bool = False): self.inventory = inventory_service self.payment = payment_gateway self.customer_email = customer_email self.is_vip = is_vip self.items: Dict[str, Dict] = {} # {product_id: {'price': float, 'qty': int}} self.is_paid = False self.status = "DRAFT" def add_item(self, product_id: str, price: float, quantity: int = 1): """Adds items to the cart. Rejects invalid prices or quantities.""" if price < 0: raise ValueError("Price cannot be negative") if quantity <= 0: raise ValueError("Quantity must be greater than zero") if product_id in self.items: self.items[product_id]['qty'] += quantity else: self.items[product_id] = {'price': price, 'qty': quantity} def remove_item(self, product_id: str): """Removes an item entirely from the cart.""" if product_id in self.items: del self.items[product_id] @property def total_price(self) -> float: """Calculates raw total before discounts.""" return sum(item['price'] * item['qty'] for item in self.items.values()) def apply_discount(self) -> float: """ Applies business logic: 1. VIPs get flat 20% off. 2. Regulars get 10% off if total > 100. 3. No discount otherwise. """ total = self.total_price if self.is_vip: return round(total * 0.8, 2) elif total > 100: return round(total * 0.9, 2) return round(total, 2) def checkout(self): """ Orchestrates the checkout process: 1. Validates cart is not empty. 2. Checks stock for all items. 3. Calculates final price. 4. Charges payment. 5. Updates inventory. """ if not self.items: raise InvalidOrderError("Cannot checkout an empty cart") # 1. Check Inventory Logic for product_id, data in self.items.items(): available_stock = self.inventory.get_stock(product_id) if available_stock < data['qty']: raise InventoryShortageError(f"Not enough stock for {product_id}") # 2. Calculate Final Price final_amount = self.apply_discount() # 3. Process Payment try: success = self.payment.charge(final_amount, "USD") if not success: raise PaymentFailedError("Transaction declined by gateway") except Exception as e: # Catching generic network errors from the gateway raise PaymentFailedError(f"Payment gateway error: {str(e)}") # 4. Decrement Stock (Only occurs if payment succeeded) for product_id, data in self.items.items(): self.inventory.decrement_stock(product_id, data['qty']) self.is_paid = True self.status = "COMPLETED" return {"status": "success", "charged_amount": final_amount}
+```
+
+## Generate Unit Tests, Mock Stubs and Validate Tests
+
+```
+from typing import Dict # --- Custom Exceptions --- class InventoryShortageError(Exception): """Raised when there is not enough item stock.""" pass class PaymentFailedError(Exception): """Raised when the payment gateway rejects the transaction.""" pass class InvalidOrderError(Exception): """Raised when the order violates business rules.""" pass # --- External Service Interfaces (To be Mocked) --- class InventoryService: def get_stock(self, product_id: str) -> int: """Connects to DB to check stock.""" raise NotImplementedError("Real connection required") def decrement_stock(self, product_id: str, quantity: int): """Connects to DB to reduce stock.""" raise NotImplementedError("Real connection required") class PaymentGateway: def charge(self, amount: float, currency: str) -> bool: """Connects to Stripe/PayPal.""" raise NotImplementedError("Real connection required") # --- Main Business Logic --- class Order: def __init__(self, inventory_service: InventoryService, payment_gateway: PaymentGateway, customer_email: str, is_vip: bool = False): self.inventory = inventory_service self.payment = payment_gateway self.customer_email = customer_email self.is_vip = is_vip self.items: Dict[str, Dict] = {} # {product_id: {'price': float, 'qty': int}} self.is_paid = False self.status = "DRAFT" def add_item(self, product_id: str, price: float, quantity: int = 1): """Adds items to the cart. Rejects invalid prices or quantities.""" if price < 0: raise ValueError("Price cannot be negative") if quantity <= 0: raise ValueError("Quantity must be greater than zero") if product_id in self.items: self.items[product_id]['qty'] += quantity else: self.items[product_id] = {'price': price, 'qty': quantity} def remove_item(self, product_id: str): """Removes an item entirely from the cart.""" if product_id in self.items: del self.items[product_id] @property def total_price(self) -> float: """Calculates raw total before discounts.""" return sum(item['price'] * item['qty'] for item in self.items.values()) def apply_discount(self) -> float: """ Applies business logic: 1. VIPs get flat 20% off. 2. Regulars get 10% off if total > 100. 3. No discount otherwise. """ total = self.total_price if self.is_vip: return round(total * 0.8, 2) elif total > 100: return round(total * 0.9, 2) return round(total, 2) def checkout(self): """ Orchestrates the checkout process: 1. Validates cart is not empty. 2. Checks stock for all items. 3. Calculates final price. 4. Charges payment. 5. Updates inventory. """ if not self.items: raise InvalidOrderError("Cannot checkout an empty cart") # 1. Check Inventory Logic for product_id, data in self.items.items(): available_stock = self.inventory.get_stock(product_id) if available_stock < data['qty']: raise InventoryShortageError(f"Not enough stock for {product_id}") # 2. Calculate Final Price final_amount = self.apply_discount() # 3. Process Payment try: success = self.payment.charge(final_amount, "USD") if not success: raise PaymentFailedError("Transaction declined by gateway") except Exception as e: # Catching generic network errors from the gateway raise PaymentFailedError(f"Payment gateway error: {str(e)}") # 4. Decrement Stock (Only occurs if payment succeeded) for product_id, data in self.items.items(): self.inventory.decrement_stock(product_id, data['qty']) self.is_paid = True self.status = "COMPLETED" return {"status": "success", "charged_amount": final_amount}
+```
+
+Ensure that you have the above Python file locally in a folder and you load that as a Workspace in Antigravity.
+This is a simple Order service that has the following key functionality in the checkout function:
+
+```
+checkout
+```
+
+1. Validates cart is not empty.
+2. Check stock for all items.
+3. Calculates final price.
+4. Charges payment.
+5. Updates inventory.
+We are going to assign the Agent the task of generating unit test cases, providing Mock implementations and executing the tests to make sure that they succeed.
+We will open our specific workspace folder and you will notice that we can now use the @ symbol too to reference the file. For example, we could do the following:
+
+```
+@
+```
+
+This comes up with some explanation of what this file is:
+We can ask it to generate a better visualization via the prompt:
+Can you visually show this class for better understanding
+
+```
+Can you visually show this class for better understanding
+```
+
+Our next step is to generate the unit tests and ask the Agent to test it out. I give the following prompt:
+
+## Generate Unit Tests, Mock Stubs and Validate Tests
+
+generate unit tests for this module and test it out with mock implementations.
+
+```
+generate unit tests for this module and test it out with mock implementations.
+```
+
+It generated the following Task artifact and went about its task.
+You can also see the details of the tests that it ran:
+One of the files that it generated was the test file too. A screenshot of which is shown below:
+
+### Things to try out
+
+Take your own code and see what you can ask the Agent to do, right from adding more functionality to refactoring parts of your code.
+
+## 11. Congratulations
+Congratulations, you've successfully installed and understood how to use Antigravity, the Agent-first development platform. The different use cases that we tried should help you take your own requirements and explore how Antigravity can collaborate with you to complete them.
+
+## Reference docs
+- Official Site :  [https://antigravity.google/](https://antigravity.google/)
+- Documentation:  [https://antigravity.google/docs](https://antigravity.google/docs)
+- Usecases :  [https://antigravity.google/use-cases](https://antigravity.google/use-cases)
+- Download :  [https://antigravity.google/download](https://antigravity.google/download)
+- Youtube Channel for Google Antigravity :  [https://www.youtube.com/@googleantigravity](https://www.youtube.com/@googleantigravity)
+[https://antigravity.google/](https://antigravity.google/)
+[https://antigravity.google/docs](https://antigravity.google/docs)
+[https://antigravity.google/use-cases](https://antigravity.google/use-cases)
+[https://antigravity.google/download](https://antigravity.google/download)
+[https://www.youtube.com/@googleantigravity](https://www.youtube.com/@googleantigravity)
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the [Google Developers Site Policies](https://developers.google.com/site-policies). Java is a registered trademark of Oracle and/or its affiliates.
+- 
+    Connect
+
+
+
+
+
+
+
+            Blog
+
+
+
+
+
+
+
+
+
+
+
+            Facebook
+
+
+
+
+
+
+
+
+
+
+
+            Medium
+
+
+
+
+
+
+
+
+
+
+
+            Twitter
+
+
+
+
+
+
+
+
+          [YouTube](https://www.youtube.com/user/GoogleDevelopers)
+
+
+
+
+
+
+- 
+
+          [Blog](https://googledevelopers.blogspot.com)
+
+
+
+- 
+
+          [Facebook](https://www.facebook.com/Google-Developers-967415219957038)
+
+
+
+- 
+
+          [Medium](https://medium.com/google-developers)
+
+
+
+- 
+
+          [Twitter](https://twitter.com/googledevs)
+
+
+
+- 
+
+          [YouTube](https://www.youtube.com/user/GoogleDevelopers)
+
+
+
+- 
+    Programs
+
+
+
+
+
+
+
+            Women Techmakers
+
+
+
+
+
+
+
+
+
+
+
+            Google Developer Groups
+
+
+
+
+
+
+
+
+
+
+
+            Google Developer Experts
+
+
+
+
+
+
+
+
+          [Accelerators](https://developers.google.com/community/accelerators)
+
+
+
+
+
+
+- 
+
+          [Women Techmakers](https://www.womentechmakers.com)
+
+
+
+- 
+
+          [Google Developer Groups](https://developers.google.com/community/gdg)
+
+
+
+- 
+
+          [Google Developer Experts](https://developers.google.com/community/experts)
+
+
+
+- 
+
+          [Accelerators](https://developers.google.com/community/accelerators)
+
+
+
+- 
+    Developer consoles
+
+
+
+
+
+
+
+            Google API Console
+
+
+
+
+
+
+
+
+
+
+
+            Google Cloud Platform Console
+
+
+
+
+
+
+
+
+
+
+
+            Google Play Console
+
+
+
+
+
+
+
+
+
+
+
+            Firebase Console
+
+
+
+
+
+
+
+
+
+
+
+            Actions on Google Console
+
+
+
+
+
+
+
+
+
+
+
+            Cast SDK Developer Console
+
+
+
+
+
+
+
+
+          [Chrome Web Store Dashboard](https://chrome.google.com/webstore/developer/dashboard)
+
+
+
+
+
+
+- 
+
+          [Google API Console](https://console.developers.google.com)
+
+
+
+- 
+
+          [Google Cloud Platform Console](https://console.cloud.google.com)
+
+
+
+- 
+
+          [Google Play Console](https://play.google.com/apps/publish)
+
+
+
+- 
+
+          [Firebase Console](https://console.firebase.google.com)
+
+
+
+- 
+
+          [Actions on Google Console](https://console.actions.google.com)
+
+
+
+- 
+
+          [Cast SDK Developer Console](https://cast.google.com/publish)
+
+
+
+- 
+
+          [Chrome Web Store Dashboard](https://chrome.google.com/webstore/developer/dashboard)
+
+### Connect
+- 
+
+          [Blog](https://googledevelopers.blogspot.com)
+
+
+
+- 
+
+          [Facebook](https://www.facebook.com/Google-Developers-967415219957038)
+
+
+
+- 
+
+          [Medium](https://medium.com/google-developers)
+
+
+
+- 
+
+          [Twitter](https://twitter.com/googledevs)
+
+
+
+- 
+
+          [YouTube](https://www.youtube.com/user/GoogleDevelopers)
+
+
+
+[Blog](https://googledevelopers.blogspot.com)
+[Facebook](https://www.facebook.com/Google-Developers-967415219957038)
+[Medium](https://medium.com/google-developers)
+[Twitter](https://twitter.com/googledevs)
+[YouTube](https://www.youtube.com/user/GoogleDevelopers)
+
+### Programs
+- 
+
+          [Women Techmakers](https://www.womentechmakers.com)
+
+
+
+- 
+
+          [Google Developer Groups](https://developers.google.com/community/gdg)
+
+
+
+- 
+
+          [Google Developer Experts](https://developers.google.com/community/experts)
+
+
+
+- 
+
+          [Accelerators](https://developers.google.com/community/accelerators)
+
+
+
+[Women Techmakers](https://www.womentechmakers.com)
+[Google Developer Groups](https://developers.google.com/community/gdg)
+[Google Developer Experts](https://developers.google.com/community/experts)
+[Accelerators](https://developers.google.com/community/accelerators)
+
+### Developer consoles
+
+- 
+
+          [Google API Console](https://console.developers.google.com)
+
+
+
+- 
+
+          [Google Cloud Platform Console](https://console.cloud.google.com)
+
+
+
+- 
+
+          [Google Play Console](https://play.google.com/apps/publish)
+
+
+
+- 
+
+          [Firebase Console](https://console.firebase.google.com)
+
+
+
+- 
+
+          [Actions on Google Console](https://console.actions.google.com)
+
+
+
+- 
+
+          [Cast SDK Developer Console](https://cast.google.com/publish)
+
+
+
+- 
+
+          [Chrome Web Store Dashboard](https://chrome.google.com/webstore/developer/dashboard)
+
+
+
+[Google API Console](https://console.developers.google.com)
+[Google Cloud Platform Console](https://console.cloud.google.com)
+[Google Play Console](https://play.google.com/apps/publish)
+[Firebase Console](https://console.firebase.google.com)
+[Actions on Google Console](https://console.actions.google.com)
+[Cast SDK Developer Console](https://cast.google.com/publish)
+[Chrome Web Store Dashboard](https://chrome.google.com/webstore/developer/dashboard)
+- 
+        [Android](https://developer.android.com)
+
+- 
+        [Chrome](https://developer.chrome.com/home)
+
+- 
+        [Firebase](https://firebase.google.com)
+
+- 
+        [Google Cloud Platform](https://cloud.google.com)
+
+- 
+        [All products](https://developers.google.com/products)
+
+[Android](https://developer.android.com)
+[Chrome](https://developer.chrome.com/home)
+[Firebase](https://firebase.google.com)
+[Google Cloud Platform](https://cloud.google.com)
+[All products](https://developers.google.com/products)
+- 
+
+
+        [Terms](https://developers.google.com/terms/site-terms)
+
+
+- 
+
+
+        [Privacy](https://policies.google.com/privacy)
+
+
+- 
+
+
+        Manage cookies
+
+
+- 
+
+        Sign up for the Google Developers newsletter
+
+
+        [Subscribe](https://services.google.com/fb/forms/googledevelopersnewsletter/?utm_medium=referral&utm_source=google-products&utm_team=googledevs&utm_campaign=201611-newsletter-launch)
+
+
+[Terms](https://developers.google.com/terms/site-terms)
+[Privacy](https://policies.google.com/privacy)
+Manage cookies
+[Subscribe](https://services.google.com/fb/forms/googledevelopersnewsletter/?utm_medium=referral&utm_source=google-products&utm_team=googledevs&utm_campaign=201611-newsletter-launch)
+- 
+      [English](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Deutsch](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Español](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Español – América Latina](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Français](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Indonesia](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Italiano](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Polski](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Português – Brasil](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Tiếng Việt](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Türkçe](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [Русский](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [עברית](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [العربيّة](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [فارسی](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [हिंदी](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [বাংলা](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [ภาษาไทย](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [中文 – 简体](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [中文 – 繁體](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [日本語](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+- 
+      [한국어](https://codelabs.developers.google.com/getting-started-google-antigravity)
+
+### Developer consoles
+
+[English](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Deutsch](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Español](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Español – América Latina](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Français](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Indonesia](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Italiano](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Polski](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Português – Brasil](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Tiếng Việt](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Türkçe](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[Русский](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[עברית](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[العربيّة](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[فارسی](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[हिंदी](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[বাংলা](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[ภาษาไทย](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[中文 – 简体](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[中文 – 繁體](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[日本語](https://codelabs.developers.google.com/getting-started-google-antigravity)
+[한국어](https://codelabs.developers.google.com/getting-started-google-antigravity)

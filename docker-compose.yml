@@ -1,0 +1,141 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: mimiverse-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-mimiverse_dev_password}
+      POSTGRES_DB: mimiverse
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - mimiverse-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: mimiverse-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 2gb --maxmemory-policy allkeys-lru
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - mimiverse-network
+
+  # NVIDIA DCGM Exporter - GPU Monitoring (optional - benötigt NVIDIA Runtime)
+  # Auskommentiert, da Image möglicherweise nicht verfügbar
+  # dcgm-exporter:
+  #   image: nvcr.io/nvidia/k8s/dcgm-exporter:3.3.8-3.5.0-ubuntu22.04
+  #   container_name: mimiverse-dcgm
+  #   runtime: nvidia
+  #   environment:
+  #     - DCGM_EXPORTER_LISTEN=:9400
+  #     - DCGM_EXPORTER_KUBERNETES=false
+  #   ports:
+  #     - "9400:9400"
+  #   cap_add:
+  #     - SYS_ADMIN
+  #   restart: unless-stopped
+  #   networks:
+  #     - mimiverse-network
+
+  # Prometheus - Metriken-Sammler
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: mimiverse-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=30d'
+    restart: unless-stopped
+    networks:
+      - mimiverse-network
+
+  # Grafana - Visualisierung
+  grafana:
+    image: grafana/grafana:latest
+    container_name: mimiverse-grafana
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=mimiverse
+      - GF_INSTALL_PLUGINS=
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+    networks:
+      - mimiverse-network
+
+  triton:
+    image: nvcr.io/nvidia/tritonserver:24.11-py3
+    container_name: mimiverse-triton
+    runtime: nvidia
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+    ports:
+      - "8000:8000" # HTTP
+      - "8001:8001" # GRPC
+      - "8002:8002" # Metrics
+    volumes:
+      - ./triton-models:/models
+    command: tritonserver --model-repository=/models --strict-model-config=false
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
+    networks:
+      - mimiverse-network
+    restart: unless-stopped
+
+  # mcp-gateway:
+  #   image: docker/mcp-gateway:latest
+  #   container_name: mimiverse-mcp-gateway
+  #   command: ["docker-mcp", "gateway", "run", "--transport", "streaming", "--port", "8080"]
+  #   ports:
+  #     - "8080:8080"
+  #   environment:
+  #     - DOCKER_MCP_CATALOG=docker-mcp
+  #   networks:
+  #     - mimiverse-network
+  #   restart: unless-stopped
+
+networks:
+  mimiverse-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:
+  prometheus_data:
+  grafana_data:

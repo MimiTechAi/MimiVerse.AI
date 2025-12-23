@@ -9,35 +9,35 @@
   --radius-md: 6px;
   --radius-lg: 8px;
   --radius-xl: 12px;
-  
+
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
-  
+
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
-  
+
   --color-popover: hsl(var(--popover));
   --color-popover-foreground: hsl(var(--popover-foreground));
-  
+
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
-  
+
   --color-secondary: hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
-  
+
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
-  
+
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
-  
+
   --color-destructive: hsl(var(--destructive));
   --color-destructive-foreground: hsl(var(--destructive-foreground));
-  
+
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
-  
+
   --color-sidebar: hsl(var(--sidebar));
   --color-sidebar-foreground: hsl(var(--sidebar-foreground));
   --color-sidebar-primary: hsl(var(--sidebar-primary));
@@ -50,14 +50,14 @@
   --color-activity-bar: hsl(var(--activity-bar));
   --color-activity-bar-foreground: hsl(var(--activity-bar-foreground));
   --color-activity-bar-active: hsl(var(--activity-bar-active));
-  
+
   --color-status-bar: hsl(var(--status-bar));
   --color-status-bar-foreground: hsl(var(--status-bar-foreground));
-  
+
   --color-editor-bg: hsl(var(--editor-bg));
   --color-editor-fg: hsl(var(--editor-fg));
   --color-editor-line-highlight: hsl(var(--editor-line-highlight));
-  
+
   --color-tab-active-bg: hsl(var(--tab-active-bg));
   --color-tab-active-fg: hsl(var(--tab-active-fg));
   --color-tab-inactive-bg: hsl(var(--tab-inactive-bg));
@@ -70,39 +70,44 @@
 :root {
   /* Cosmic Dark Theme (Mimiverse.ai) */
   /* Base background is a very deep charcoal/black, almost void-like */
-  --background: 240 10% 3.9%; /* #09090b */
-  --foreground: 0 0% 98%; /* #fafafa */
-  
+  --background: 240 10% 3.9%;
+  /* #09090b */
+  --foreground: 0 0% 98%;
+  /* #fafafa */
+
   --card: 240 10% 3.9%;
   --card-foreground: 0 0% 98%;
-  
+
   --popover: 240 10% 3.9%;
   --popover-foreground: 0 0% 98%;
-  
+
   /* Primary Accent: Cosmic Purple */
-  --primary: 270 95% 60%; /* #9333EA */
+  --primary: 270 95% 60%;
+  /* #9333EA */
   --primary-foreground: 0 0% 100%;
-  
+
   --secondary: 240 4% 16%;
   --secondary-foreground: 0 0% 98%;
-  
+
   --muted: 240 4% 16%;
   --muted-foreground: 240 5% 64.9%;
-  
-  --accent: 270 50% 20%; /* Muted purple for hover states */
+
+  --accent: 270 50% 20%;
+  /* Muted purple for hover states */
   --accent-foreground: 0 0% 98%;
-  
+
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 100%;
-  
+
   --border: 240 4% 16%;
   --input: 240 4% 16%;
   --ring: 270 95% 60%;
-  
+
   --radius: 0.5rem;
-  
+
   /* IDE Specific Colors - Mimiverse Palette */
-  --sidebar: 240 10% 3.9%; /* #09090b */
+  --sidebar: 240 10% 3.9%;
+  /* #09090b */
   --sidebar-foreground: 240 5% 64.9%;
   --sidebar-primary: 270 95% 60%;
   --sidebar-primary-foreground: 0 0% 100%;
@@ -111,27 +116,36 @@
   --sidebar-border: 240 4% 16%;
   --sidebar-ring: 270 95% 60%;
 
-  --activity-bar: 240 10% 3.9%; /* #09090b - same as sidebar for seamless look */
+  --activity-bar: 240 10% 3.9%;
+  /* #09090b - same as sidebar for seamless look */
   --activity-bar-foreground: 240 5% 64.9%;
   --activity-bar-active: 0 0% 98%;
-  
-  --status-bar: 270 95% 60%; /* Purple Status Bar */
+
+  --status-bar: 270 95% 60%;
+  /* Purple Status Bar */
   --status-bar-foreground: 0 0% 100%;
-  
-  --editor-bg: 240 10% 3.9%; /* #09090b */
+
+  --editor-bg: 240 10% 3.9%;
+  /* #09090b */
   --editor-fg: 0 0% 98%;
   --editor-line-highlight: 240 4% 16%;
-  
+
   --tab-active-bg: 240 10% 3.9%;
   --tab-active-fg: 0 0% 98%;
-  --tab-inactive-bg: 240 6% 10%; /* Slightly lighter than bg */
+  --tab-inactive-bg: 240 6% 10%;
+  /* Slightly lighter than bg */
   --tab-inactive-fg: 240 5% 64.9%;
+
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(20, 20, 23, 0.7);
+  --glass-highlight: rgba(255, 255, 255, 0.03);
 }
 
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply font-sans antialiased bg-background text-foreground overflow-hidden;
   }
@@ -165,4 +179,34 @@
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-md bg-[var(--glass-bg)] border border-[var(--glass-border)];
+  }
+
+  .glass-strong {
+    @apply backdrop-blur-xl bg-[#09090b]/90 border-r border-[var(--glass-border)];
+  }
+
+  .glass-panel {
+    @apply bg-[#1E1E24]/50 backdrop-blur-sm border border-white/5;
+  }
+
+  .animate-in-fade {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

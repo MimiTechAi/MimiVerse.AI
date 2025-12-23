@@ -6,9 +6,10 @@ import { Input } from "@/components/ui/input";
 interface AIFloatingInputProps {
   visible: boolean;
   onClose: () => void;
+  onSubmit?: (query: string) => void;
 }
 
-export function AIFloatingInput({ visible, onClose }: AIFloatingInputProps) {
+export function AIFloatingInput({ visible, onClose, onSubmit }: AIFloatingInputProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState("");
 
@@ -44,16 +45,29 @@ export function AIFloatingInput({ visible, onClose }: AIFloatingInputProps) {
                   onKeyDown={(e) => {
                     if (e.key === 'Escape') onClose();
                     if (e.key === 'Enter') {
-                      // Handle AI action
+                      const trimmed = query.trim();
+                      if (trimmed) {
+                        onSubmit?.(trimmed);
+                      }
                       onClose();
                     }
                   }}
                />
                <div className="flex items-center gap-2 pr-3">
                   {query && (
-                    <div className="text-[10px] text-white/50 flex items-center gap-1 bg-white/5 px-2 py-1 rounded">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const trimmed = query.trim();
+                        if (trimmed) {
+                          onSubmit?.(trimmed);
+                        }
+                        onClose();
+                      }}
+                      className="text-[10px] text-white/50 flex items-center gap-1 bg-white/5 px-2 py-1 rounded hover:bg-white/10"
+                    >
                       <span>Run</span> <ArrowRight size={10} />
-                    </div>
+                    </button>
                   )}
                   <button onClick={onClose} className="text-white/40 hover:text-white transition-colors">
                     <X size={16} />
