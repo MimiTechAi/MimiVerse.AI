@@ -6,4 +6,6 @@ vite.config.ts.*
 *.tar.gz
 .env
 *.log
-postgres_data/
+postgres_data/out/
+*.onnx
+triton-models/

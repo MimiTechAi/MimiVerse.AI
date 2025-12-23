@@ -14,7 +14,7 @@ import { VitePlugin } from '@electron-forge/plugin-vite';
 const config: ForgeConfig = {
     packagerConfig: {
         name: 'Mimiverse',
-        executableName: 'mimiverse',
+        executableName: 'mimiverse-ide', // Must match package.json name to satisfy makers
         appBundleId: 'ai.mimiverse.ide',
         appCategoryType: 'public.app-category.developer-tools',
         icon: './assets/icon',
