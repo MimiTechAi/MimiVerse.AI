@@ -305,7 +305,7 @@ interface LayoutPreset {
 }
 ```
 
-**Vergleich mit VS Code/Cursor:**
+**Vergleich mit herkömmlichen KI-Editoren:**
 - ✅ **Flexibilität:** Bessere Panel-Anordnung
 - ✅ **AI Integration:** Tiefer als Standard VS Code
 - ✅ **Responsive Design:** Mobile-fähig
@@ -987,7 +987,7 @@ gunzip -t "/backups/db_$(date +%Y%m%d_%H%M%S).sql.gz"
 
 ### **Feature Matrix: Mimiverse vs. Competition**
 
-| Feature | Mimiverse | Cursor 2.0 | Windsurf | VSCode + Copilot | SOTA 2025 |
+| Feature | Mimiverse | SOTA Leader A | SOTA Leader B | VSCode + Copilot | SOTA 2025 |
 |---------|-----------|------------|----------|------------------|-----------|
 | **AI Chat** | ✅ Advanced | ✅ Composer | ✅ Mimi Engine | ❌ Limited | ✅ |
 | **Multi-File Edits** | ✅ | ✅ | ✅ | ❌ | ✅ |
