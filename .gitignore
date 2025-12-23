@@ -9,3 +9,4 @@ vite.config.ts.*
 postgres_data/out/
 *.onnx
 triton-models/
+out/

@@ -87,22 +87,19 @@ export function Hero() {
                                 <DropdownMenuLabel>Select Platform</DropdownMenuLabel>
                                 <DropdownMenuSeparator className="bg-[#333]" />
 
-                                <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.open('https://github.com/mimiverse/ide/releases/latest/download/Mimiverse-x64.dmg', '_blank')}>
-                                    <Apple className="mr-2 h-4 w-4" /> macOS (Intel)
-                                </DropdownMenuItem>
-                                <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.open('https://github.com/mimiverse/ide/releases/latest/download/Mimiverse-arm64.dmg', '_blank')}>
-                                    <Cpu className="mr-2 h-4 w-4" /> macOS (Silicon)
+                                <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.open('https://github.com/MimiTechAi/MimiVerse.AI/releases/latest/download/Mimiverse-1.0.0.dmg', '_blank')}>
+                                    <Apple className="mr-2 h-4 w-4" /> macOS (Intel & Silicon)
                                 </DropdownMenuItem>
 
                                 <DropdownMenuSeparator className="bg-[#333]" />
 
-                                <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.open('https://github.com/mimiverse/ide/releases/latest/download/Mimiverse-Setup.exe', '_blank')}>
+                                <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.open('https://github.com/MimiTechAi/MimiVerse.AI/releases/latest/download/Mimiverse-Setup-1.0.0.exe', '_blank')}>
                                     <Monitor className="mr-2 h-4 w-4" /> Windows
                                 </DropdownMenuItem>
 
                                 <DropdownMenuSeparator className="bg-[#333]" />
 
-                                <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.location.href = '/download/Mimiverse-linux-arm64-1.0.0.zip'}>
+                                <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.location.href = 'https://github.com/MimiTechAi/MimiVerse.AI/releases/latest/download/mimiverse-ide_1.0.0_amd64.deb'}>
                                     <Terminal className="mr-2 h-4 w-4" /> Linux (Direct)
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
