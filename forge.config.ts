@@ -19,9 +19,13 @@ const config: ForgeConfig = {
         appCategoryType: 'public.app-category.developer-tools',
         icon: './assets/icon',
         asar: true,
-        // osxSign and osxNotarize disabled for CI build without certs
-        // osxSign: {},
-        // osxNotarize: { ... },
+        // Signing and Notarization
+        osxSign: {},
+        osxNotarize: process.env.APPLE_ID ? {
+            appleId: process.env.APPLE_ID,
+            appleIdPassword: process.env.APPLE_ID_PASSWORD!,
+            teamId: process.env.APPLE_TEAM_ID!,
+        } : undefined,
     },
     rebuildConfig: {},
     makers: [

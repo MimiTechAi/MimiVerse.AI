@@ -37,9 +37,29 @@ jobs:
           sudo apt-get install -y dpkg fakeroot rpm
 
       - name: Build & Make
+        shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run electron:make
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          if [[ "${{ matrix.os }}" == "macos-latest" && "${{ secrets.MACOS_CERTIFICATE }}" != "" ]]; then
+            echo "Importing macOS Certificate"
+            export CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
+            echo "${{ secrets.MACOS_CERTIFICATE }}" | base64 --decode > $CERTIFICATE_PATH
+            
+            # Create a temporary keychain
+            export KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+            security create-keychain -p "" $KEYCHAIN_PATH
+            security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
+            security unlock-keychain -p "" $KEYCHAIN_PATH
+            
+            # Import the certificate
+            security import $CERTIFICATE_PATH -P "${{ secrets.MACOS_CERTIFICATE_PWD }}" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+            security list-keychain -d user -s $KEYCHAIN_PATH
+          fi
+          npm run electron:make
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
