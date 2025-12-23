@@ -25,8 +25,8 @@ Unlike cloud-only tools, Mimiverse offers a **True Offline Mode**, leveraging an
 
 ## ✨ Key Features
 
-### 🧠 Cascade Engine (Rust)
-Powered by a custom Rust backend, the Cascade Engine handles heavy lifting—file indexing, syntax analysis, and local search—at native speeds, keeping the UI silky smooth regardless of project size.
+### 🧠 Mimi Engine (Rust)
+Powered by a custom Rust backend, the Mimi Engine handles heavy lifting—file indexing, syntax analysis, and local search—at native speeds, keeping the UI silky smooth regardless of project size.
 
 ### 🔌 True Offline Capability
 Work anywhere.

@@ -1,5 +1,5 @@
-// Cascade Engine - Dependency Graph Analysis
-// Inspired by Windsurf's Cascade Engine for cross-file reasoning
+// Mimi Engine - Dependency Graph Analysis
+// Production-ready cross-file reasoning and context awareness
 
 use std::collections::{HashMap, HashSet};
 use std::path::{Path, PathBuf};

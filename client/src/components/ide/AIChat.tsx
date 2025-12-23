@@ -24,9 +24,9 @@ interface Message {
     key: string;
     label: string;
     action:
-      | { type: 'run_tests' }
-      | { type: 'auto_fix_tests' }
-      | { type: 'chat_prompt'; prompt: string };
+    | { type: 'run_tests' }
+    | { type: 'auto_fix_tests' }
+    | { type: 'chat_prompt'; prompt: string };
   }[];
   artifacts?: {
     type: 'file' | 'search' | 'plan';
@@ -128,7 +128,7 @@ function AgentRunHeader({
         </div>
         <div className="space-y-0.5">
           <div className="flex items-center gap-2">
-            <span className="text-sm font-semibold text-white">MIMI Agent</span>
+            <span className="text-sm font-semibold text-white">Mimi Engine</span>
             <span className="text-[10px] px-1.5 py-0.5 rounded-full border border-white/10 flex items-center gap-1 bg-[#111827]">
               {!isAgentConnected && <span className="text-red-300">Offline</span>}
               {isAgentConnected && agentStatus === 'error' && (
@@ -531,52 +531,52 @@ export function AIChat({
 
       const suggestions: NonNullable<Message['suggestions']> = failed > 0
         ? [
-            {
-              key: 'auto-fix-tests',
-              label: 'Auto-fix failing tests',
-              action: { type: 'auto_fix_tests' },
+          {
+            key: 'auto-fix-tests',
+            label: 'Auto-fix failing tests',
+            action: { type: 'auto_fix_tests' },
+          },
+          {
+            key: 'explain-failures',
+            label: 'Explain failing tests',
+            action: {
+              type: 'chat_prompt',
+              prompt: [
+                'Here are the latest test results from the test runner:',
+                '',
+                summaryText,
+                '',
+                'Explain the failing tests and propose concrete code changes to fix them.',
+              ].join('\n'),
             },
-            {
-              key: 'explain-failures',
-              label: 'Explain failing tests',
-              action: {
-                type: 'chat_prompt',
-                prompt: [
-                  'Here are the latest test results from the test runner:',
-                  '',
-                  summaryText,
-                  '',
-                  'Explain the failing tests and propose concrete code changes to fix them.',
-                ].join('\n'),
-              },
-            },
-            {
-              key: 'rerun-tests',
-              label: 'Re-run tests',
-              action: { type: 'run_tests' },
-            },
-          ]
+          },
+          {
+            key: 'rerun-tests',
+            label: 'Re-run tests',
+            action: { type: 'run_tests' },
+          },
+        ]
         : [
-            {
-              key: 'next-step',
-              label: 'Suggest next improvement',
-              action: {
-                type: 'chat_prompt',
-                prompt: [
-                  'All tests are currently passing. Here are the latest test results:',
-                  '',
-                  summaryText,
-                  '',
-                  'Suggest the next high-impact refactor or feature for this codebase and outline a short plan.',
-                ].join('\n'),
-              },
+          {
+            key: 'next-step',
+            label: 'Suggest next improvement',
+            action: {
+              type: 'chat_prompt',
+              prompt: [
+                'All tests are currently passing. Here are the latest test results:',
+                '',
+                summaryText,
+                '',
+                'Suggest the next high-impact refactor or feature for this codebase and outline a short plan.',
+              ].join('\n'),
             },
-            {
-              key: 'rerun-tests',
-              label: 'Re-run tests',
-              action: { type: 'run_tests' },
-            },
-          ];
+          },
+          {
+            key: 'rerun-tests',
+            label: 'Re-run tests',
+            action: { type: 'run_tests' },
+          },
+        ];
 
       setMessages(prev => [
         ...prev,
@@ -707,47 +707,47 @@ export function AIChat({
 
       const suggestions: NonNullable<Message['suggestions']> = failedNow > 0
         ? [
-            {
-              key: 'rerun-tests',
-              label: 'Re-run tests',
-              action: { type: 'run_tests' },
+          {
+            key: 'rerun-tests',
+            label: 'Re-run tests',
+            action: { type: 'run_tests' },
+          },
+          {
+            key: 'explain-remaining-failures',
+            label: 'Explain remaining failures',
+            action: {
+              type: 'chat_prompt',
+              prompt: [
+                'Here are the latest test results after auto-fix:',
+                '',
+                summaryText,
+                '',
+                'Explain the remaining failing tests and propose further fixes.',
+              ].join('\n'),
             },
-            {
-              key: 'explain-remaining-failures',
-              label: 'Explain remaining failures',
-              action: {
-                type: 'chat_prompt',
-                prompt: [
-                  'Here are the latest test results after auto-fix:',
-                  '',
-                  summaryText,
-                  '',
-                  'Explain the remaining failing tests and propose further fixes.',
-                ].join('\n'),
-              },
-            },
-          ]
+          },
+        ]
         : [
-            {
-              key: 'rerun-tests',
-              label: 'Re-run tests',
-              action: { type: 'run_tests' },
+          {
+            key: 'rerun-tests',
+            label: 'Re-run tests',
+            action: { type: 'run_tests' },
+          },
+          {
+            key: 'next-step',
+            label: 'Suggest next improvement',
+            action: {
+              type: 'chat_prompt',
+              prompt: [
+                'All tests are now passing after auto-fix. Here are the latest test results:',
+                '',
+                summaryText,
+                '',
+                'Suggest the next high-impact refactor or feature for this codebase and outline a short plan.',
+              ].join('\n'),
             },
-            {
-              key: 'next-step',
-              label: 'Suggest next improvement',
-              action: {
-                type: 'chat_prompt',
-                prompt: [
-                  'All tests are now passing after auto-fix. Here are the latest test results:',
-                  '',
-                  summaryText,
-                  '',
-                  'Suggest the next high-impact refactor or feature for this codebase and outline a short plan.',
-                ].join('\n'),
-              },
-            },
-          ];
+          },
+        ];
 
       setMessages(prev => [
         ...prev,
@@ -958,10 +958,10 @@ export function AIChat({
           setMessages(prev => prev.map(msg =>
             msg.id === aiMsgId
               ? {
-                  ...msg,
-                  ...(thoughtsText && { thoughts: thoughtsText }),
-                  ...(typeof thoughtDurationMs === 'number' && { thoughtDurationMs }),
-                }
+                ...msg,
+                ...(thoughtsText && { thoughts: thoughtsText }),
+                ...(typeof thoughtDurationMs === 'number' && { thoughtDurationMs }),
+              }
               : msg
           ));
         }
@@ -1354,12 +1354,12 @@ export function AIChat({
           timestamp: new Date(),
           attachments: relPath
             ? [
-                {
-                  path: relPath,
-                  name,
-                  mimeType: file.type || undefined,
-                },
-              ]
+              {
+                path: relPath,
+                name,
+                mimeType: file.type || undefined,
+              },
+            ]
             : undefined,
         },
       ]);
@@ -1706,127 +1706,235 @@ export function AIChat({
       </div>
 
       <ScrollArea className="flex-1 px-4 py-4">
-      <div className="h-full flex items-start gap-4">
-        <div className="flex-1 space-y-3">
-          {pendingRiskPrompt && (
-            <div className="rounded-md border border-amber-500/60 bg-amber-500/10 px-3 py-2 text-[11px] text-amber-100 space-y-1">
-              <div className="flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2">
-                  <AlertCircle size={12} className="text-amber-300" />
-                  <div>
-                    <div className="uppercase tracking-[0.16em] text-[9px] text-amber-300/80">Risk gate</div>
-                    <div className="text-xs text-amber-50">
-                      {pendingRiskPrompt.description || 'High-risk action requires your approval.'}
+        <div className="h-full flex items-start gap-4">
+          <div className="flex-1 space-y-3">
+            {pendingRiskPrompt && (
+              <div className="rounded-md border border-amber-500/60 bg-amber-500/10 px-3 py-2 text-[11px] text-amber-100 space-y-1">
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    <AlertCircle size={12} className="text-amber-300" />
+                    <div>
+                      <div className="uppercase tracking-[0.16em] text-[9px] text-amber-300/80">Risk gate</div>
+                      <div className="text-xs text-amber-50">
+                        {pendingRiskPrompt.description || 'High-risk action requires your approval.'}
+                      </div>
                     </div>
                   </div>
-                </div>
-                {pendingRiskPrompt.risk && (
-                  <span className="px-1.5 py-0.5 rounded-full border border-amber-400/60 text-[9px] text-amber-100">
-                    Risk: {pendingRiskPrompt.risk}
-                  </span>
-                )}
-              </div>
-              {(pendingRiskPrompt.command || pendingRiskPrompt.url) && (
-                <div className="text-[10px] text-amber-100/90 truncate">
-                  {pendingRiskPrompt.command ? `Command: ${pendingRiskPrompt.command}` : null}
-                  {pendingRiskPrompt.url ? `URL: ${pendingRiskPrompt.url}` : null}
-                </div>
-              )}
-              <div className="flex items-center justify-end gap-2 text-[10px] mt-1">
-                <button
-                  type="button"
-                  disabled={isSubmittingRiskDecision}
-                  className="px-2 py-0.5 rounded-md border border-amber-500/60 text-amber-100 hover:bg-amber-500/20 disabled:opacity-60 disabled:cursor-not-allowed"
-                  onClick={() => handleRiskDecision(false)}
-                >
-                  Cancel
-                </button>
-                <button
-                  type="button"
-                  disabled={isSubmittingRiskDecision}
-                  className="px-2 py-0.5 rounded-md border border-emerald-500/60 bg-emerald-500/20 text-emerald-100 hover:bg-emerald-500/30 disabled:opacity-60 disabled:cursor-not-allowed"
-                  onClick={() => handleRiskDecision(true)}
-                >
-                  Allow once
-                </button>
-              </div>
-            </div>
-          )}
-
-          {hasThinking && (
-            <div className="sticky top-0 z-10 pt-1 pb-2 bg-[#1E1E24]">
-              <AgentThinking
-                thoughts={thinkingCardThoughts}
-                isThinking={isAgentThinking}
-                hidden={thinkingHidden}
-                onToggleHidden={() => setThinkingHidden((h) => !h)}
-                onCopyAll={handleCopy}
-                onSendToComposer={handleSendToComposer}
-              />
-            </div>
-          )}
-
-          <div className="mt-4 space-y-3">
-            {messages.map((msg) => (
-              <motion.div
-                key={msg.id}
-                initial={{ opacity: 0, y: 4 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -4 }}
-                transition={{ duration: 0.12 }}
-              >
-                <div
-                  className={cn(
-                    "flex gap-2",
-                    msg.role === 'user' ? 'justify-end' : 'justify-start'
+                  {pendingRiskPrompt.risk && (
+                    <span className="px-1.5 py-0.5 rounded-full border border-amber-400/60 text-[9px] text-amber-100">
+                      Risk: {pendingRiskPrompt.risk}
+                    </span>
                   )}
+                </div>
+                {(pendingRiskPrompt.command || pendingRiskPrompt.url) && (
+                  <div className="text-[10px] text-amber-100/90 truncate">
+                    {pendingRiskPrompt.command ? `Command: ${pendingRiskPrompt.command}` : null}
+                    {pendingRiskPrompt.url ? `URL: ${pendingRiskPrompt.url}` : null}
+                  </div>
+                )}
+                <div className="flex items-center justify-end gap-2 text-[10px] mt-1">
+                  <button
+                    type="button"
+                    disabled={isSubmittingRiskDecision}
+                    className="px-2 py-0.5 rounded-md border border-amber-500/60 text-amber-100 hover:bg-amber-500/20 disabled:opacity-60 disabled:cursor-not-allowed"
+                    onClick={() => handleRiskDecision(false)}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    disabled={isSubmittingRiskDecision}
+                    className="px-2 py-0.5 rounded-md border border-emerald-500/60 bg-emerald-500/20 text-emerald-100 hover:bg-emerald-500/30 disabled:opacity-60 disabled:cursor-not-allowed"
+                    onClick={() => handleRiskDecision(true)}
+                  >
+                    Allow once
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {hasThinking && (
+              <div className="sticky top-0 z-10 pt-1 pb-2 bg-[#1E1E24]">
+                <AgentThinking
+                  thoughts={thinkingCardThoughts}
+                  isThinking={isAgentThinking}
+                  hidden={thinkingHidden}
+                  onToggleHidden={() => setThinkingHidden((h) => !h)}
+                  onCopyAll={handleCopy}
+                  onSendToComposer={handleSendToComposer}
+                />
+              </div>
+            )}
+
+            <div className="mt-4 space-y-3">
+              {messages.map((msg) => (
+                <motion.div
+                  key={msg.id}
+                  initial={{ opacity: 0, y: 4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -4 }}
+                  transition={{ duration: 0.12 }}
                 >
-                  {msg.role === 'assistant' ? (
-                    <>
-                      <Avatar className="w-7 h-7 border border-purple-500/40 bg-purple-500/10">
-                        <AvatarFallback className="text-[10px] bg-transparent text-purple-200">
-                          M
-                        </AvatarFallback>
-                      </Avatar>
-                      <div className="flex-1 max-w-[85%]">
-                        <div
-                          className={cn(
-                            "rounded-2xl border px-3 py-2 text-xs leading-relaxed bg-[#111827] text-gray-100 space-y-1",
-                            msg.isSystem
-                              ? "border-amber-400/60 bg-amber-500/10"
-                              : "border-white/10"
-                          )}
-                        >
-                          <div className="flex items-center justify-between gap-2">
-                            <div className="flex items-center gap-2">
-                              <span
-                                className={cn(
-                                  "inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] uppercase tracking-[0.16em]",
-                                  msg.isSystem
-                                    ? "bg-amber-500/10 text-amber-200 border border-amber-400/60"
-                                    : "bg-purple-500/10 text-purple-200 border border-purple-400/60"
-                                )}
-                              >
+                  <div
+                    className={cn(
+                      "flex gap-2",
+                      msg.role === 'user' ? 'justify-end' : 'justify-start'
+                    )}
+                  >
+                    {msg.role === 'assistant' ? (
+                      <>
+                        <Avatar className="w-7 h-7 border border-purple-500/40 bg-purple-500/10">
+                          <AvatarFallback className="text-[10px] bg-transparent text-purple-200">
+                            M
+                          </AvatarFallback>
+                        </Avatar>
+                        <div className="flex-1 max-w-[85%]">
+                          <div
+                            className={cn(
+                              "rounded-2xl border px-3 py-2 text-xs leading-relaxed bg-[#111827] text-gray-100 space-y-1",
+                              msg.isSystem
+                                ? "border-amber-400/60 bg-amber-500/10"
+                                : "border-white/10"
+                            )}
+                          >
+                            <div className="flex items-center justify-between gap-2">
+                              <div className="flex items-center gap-2">
                                 <span
                                   className={cn(
-                                    "w-1.5 h-1.5 rounded-full",
-                                    msg.isSystem ? "bg-amber-400" : "bg-emerald-400"
+                                    "inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] uppercase tracking-[0.16em]",
+                                    msg.isSystem
+                                      ? "bg-amber-500/10 text-amber-200 border border-amber-400/60"
+                                      : "bg-purple-500/10 text-purple-200 border border-purple-400/60"
                                   )}
-                                />
-                                <span>{msg.isSystem ? "System status" : "Agent response"}</span>
-                              </span>
+                                >
+                                  <span
+                                    className={cn(
+                                      "w-1.5 h-1.5 rounded-full",
+                                      msg.isSystem ? "bg-amber-400" : "bg-emerald-400"
+                                    )}
+                                  />
+                                  <span>{msg.isSystem ? "System status" : "Agent response"}</span>
+                                </span>
+                              </div>
+                              {typeof msg.thoughtDurationMs === 'number' && (
+                                <span className="text-[10px] text-gray-400">
+                                  Thought for {Math.max(1, Math.round(msg.thoughtDurationMs / 1000))}s
+                                </span>
+                              )}
                             </div>
-                            {typeof msg.thoughtDurationMs === 'number' && (
-                              <span className="text-[10px] text-gray-400">
-                                Thought for {Math.max(1, Math.round(msg.thoughtDurationMs / 1000))}s
-                              </span>
+
+                            <div className="whitespace-pre-wrap break-words text-[11px]">
+                              {msg.content}
+                            </div>
+
+                            {msg.attachments && msg.attachments.length > 0 && (
+                              <div className="mt-2 space-y-1">
+                                {msg.attachments.map((att, idx) => {
+                                  const isImage = /\.(png|jpe?g|gif|webp|bmp)$/i.test(att.name || att.path);
+                                  const url = `/api/attachments/get?path=${encodeURIComponent(att.path)}`;
+                                  if (isImage) {
+                                    return (
+                                      <div
+                                        key={`${att.path}-${idx}`}
+                                        className="border border-white/10 bg-black/20 rounded-md p-1"
+                                      >
+                                        <div className="text-[10px] text-gray-400 mb-1 flex items-center gap-1">
+                                          <Paperclip size={10} className="text-purple-300" />
+                                          <span className="truncate">{att.name}</span>
+                                        </div>
+                                        <img
+                                          src={url}
+                                          alt={att.name}
+                                          className="max-h-40 rounded-sm border border-white/5 object-contain bg-black/40"
+                                        />
+                                      </div>
+                                    );
+                                  }
+                                  return (
+                                    <a
+                                      key={`${att.path}-${idx}`}
+                                      href={url}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-white/5 hover:bg-white/10 border border-white/10 text-[10px] text-gray-100"
+                                    >
+                                      <Paperclip size={10} className="text-purple-300" />
+                                      <span className="truncate max-w-[160px]">{att.name}</span>
+                                    </a>
+                                  );
+                                })}
+                              </div>
                             )}
-                          </div>
 
-                          <div className="whitespace-pre-wrap break-words text-[11px]">
-                            {msg.content}
-                          </div>
+                            {msg.suggestions && msg.suggestions.length > 0 && (
+                              <div className="mt-2 flex flex-wrap gap-1.5">
+                                {msg.suggestions.map((s) => (
+                                  <button
+                                    key={s.key}
+                                    type="button"
+                                    className="px-2 py-0.5 rounded-full bg-white/5 hover:bg-white/10 border border-purple-500/40 text-[10px] text-purple-100 transition-colors"
+                                    onClick={() => handleSuggestionClick(s)}
+                                  >
+                                    {s.label}
+                                  </button>
+                                ))}
+                              </div>
+                            )}
 
+                            {msg.thoughts && (
+                              <div className="mt-2 border-t border-white/10 pt-1.5">
+                                <button
+                                  type="button"
+                                  className="text-[10px] text-purple-300 hover:text-purple-100 flex items-center gap-1"
+                                  onClick={() =>
+                                    setExpandedThoughts(prev => ({
+                                      ...prev,
+                                      [msg.id]: !prev[msg.id],
+                                    }))
+                                  }
+                                >
+                                  <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+                                  {expandedThoughts[msg.id]
+                                    ? 'Hide thoughts'
+                                    : typeof msg.thoughtDurationMs === 'number'
+                                      ? `Thought for ${Math.max(1, Math.round(msg.thoughtDurationMs / 1000))}s`
+                                      : 'Show thoughts'}
+                                </button>
+                                {expandedThoughts[msg.id] && (
+                                  <div className="mt-1 text-[11px] text-gray-300 whitespace-pre-wrap break-words">
+                                    {msg.thoughts}
+                                  </div>
+                                )}
+                              </div>
+                            )}
+
+                            <div className="mt-2 flex gap-2 justify-end text-[10px] text-gray-400">
+                              <button
+                                type="button"
+                                className="px-2 py-0.5 rounded-md bg-white/5 hover:bg-white/10 border border-white/10"
+                                onClick={() => handleCopy(msg.content)}
+                              >
+                                Copy
+                              </button>
+                              <button
+                                type="button"
+                                className="px-2 py-0.5 rounded-md bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/40 text-purple-200"
+                                onClick={() => handleSendToComposer(msg.content)}
+                              >
+                                Send to Composer
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div
+                          className={cn(
+                            "max-w-[80%] rounded-2xl px-3 py-2 text-xs leading-relaxed bg-purple-600 text-white shadow-lg shadow-purple-900/30",
+                          )}
+                        >
+                          <div className="whitespace-pre-wrap break-words">{msg.content}</div>
                           {msg.attachments && msg.attachments.length > 0 && (
                             <div className="mt-2 space-y-1">
                               {msg.attachments.map((att, idx) => {
@@ -1865,183 +1973,75 @@ export function AIChat({
                               })}
                             </div>
                           )}
-
-                          {msg.suggestions && msg.suggestions.length > 0 && (
-                            <div className="mt-2 flex flex-wrap gap-1.5">
-                              {msg.suggestions.map((s) => (
-                                <button
-                                  key={s.key}
-                                  type="button"
-                                  className="px-2 py-0.5 rounded-full bg-white/5 hover:bg-white/10 border border-purple-500/40 text-[10px] text-purple-100 transition-colors"
-                                  onClick={() => handleSuggestionClick(s)}
-                                >
-                                  {s.label}
-                                </button>
-                              ))}
-                            </div>
-                          )}
-
-                          {msg.thoughts && (
-                            <div className="mt-2 border-t border-white/10 pt-1.5">
-                              <button
-                                type="button"
-                                className="text-[10px] text-purple-300 hover:text-purple-100 flex items-center gap-1"
-                                onClick={() =>
-                                  setExpandedThoughts(prev => ({
-                                    ...prev,
-                                    [msg.id]: !prev[msg.id],
-                                  }))
-                                }
-                              >
-                                <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
-                                {expandedThoughts[msg.id]
-                                  ? 'Hide thoughts'
-                                  : typeof msg.thoughtDurationMs === 'number'
-                                    ? `Thought for ${Math.max(1, Math.round(msg.thoughtDurationMs / 1000))}s`
-                                    : 'Show thoughts'}
-                              </button>
-                              {expandedThoughts[msg.id] && (
-                                <div className="mt-1 text-[11px] text-gray-300 whitespace-pre-wrap break-words">
-                                  {msg.thoughts}
-                                </div>
-                              )}
-                            </div>
-                          )}
-
-                          <div className="mt-2 flex gap-2 justify-end text-[10px] text-gray-400">
-                            <button
-                              type="button"
-                              className="px-2 py-0.5 rounded-md bg-white/5 hover:bg-white/10 border border-white/10"
-                              onClick={() => handleCopy(msg.content)}
-                            >
-                              Copy
-                            </button>
-                            <button
-                              type="button"
-                              className="px-2 py-0.5 rounded-md bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/40 text-purple-200"
-                              onClick={() => handleSendToComposer(msg.content)}
-                            >
-                              Send to Composer
-                            </button>
-                          </div>
                         </div>
+
+                        <Avatar className="w-7 h-7 border border-white/10 bg-white/5">
+                          <AvatarFallback className="text-[10px] bg-transparent text-gray-100">
+                            U
+                          </AvatarFallback>
+                        </Avatar>
+                      </>
+                    )}
+                  </div>
+
+                  {msg.role === 'user' && inlineActivity && inlineActivity.messageId === msg.id && (
+                    <div className="w-full flex flex-col items-end mt-1 space-y-1">
+                      <div className={cn(
+                        "inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#111827] border border-purple-500/40 text-[10px] text-purple-100",
+                        !inlineActivity.done && "animate-pulse"
+                      )}>
+                        <Brain size={10} className="text-purple-300" />
+                        <span>
+                          {inlineActivity.done
+                            ? inlineActivity.aborted
+                              ? "Stopped by user"
+                              : "Thoughts completed"
+                            : inlinePhaseLabel}
+                        </span>
                       </div>
-                    </>
-                  ) : (
-                    <>
-                      <div
-                        className={cn(
-                          "max-w-[80%] rounded-2xl px-3 py-2 text-xs leading-relaxed bg-purple-600 text-white shadow-lg shadow-purple-900/30",
-                        )}
-                      >
-                        <div className="whitespace-pre-wrap break-words">{msg.content}</div>
-                        {msg.attachments && msg.attachments.length > 0 && (
-                          <div className="mt-2 space-y-1">
-                            {msg.attachments.map((att, idx) => {
-                              const isImage = /\.(png|jpe?g|gif|webp|bmp)$/i.test(att.name || att.path);
-                              const url = `/api/attachments/get?path=${encodeURIComponent(att.path)}`;
-                              if (isImage) {
-                                return (
-                                  <div
-                                    key={`${att.path}-${idx}`}
-                                    className="border border-white/10 bg-black/20 rounded-md p-1"
-                                  >
-                                    <div className="text-[10px] text-gray-400 mb-1 flex items-center gap-1">
-                                      <Paperclip size={10} className="text-purple-300" />
-                                      <span className="truncate">{att.name}</span>
-                                    </div>
-                                    <img
-                                      src={url}
-                                      alt={att.name}
-                                      className="max-h-40 rounded-sm border border-white/5 object-contain bg-black/40"
-                                    />
-                                  </div>
-                                );
-                              }
+
+                      {(() => {
+                        const thoughtText = getInlineThoughtText();
+                        if (!thoughtText) return null;
+                        return (
+                          <div className="max-w-[80%] rounded-lg bg-black/40 border border-purple-500/30 px-2 py-1 text-[11px] text-gray-100 font-mono whitespace-pre-wrap break-words">
+                            {thoughtText}
+                          </div>
+                        );
+                      })()}
+
+                      {(() => {
+                        const events = getInlineAgentEvents();
+                        if (!events.length) return null;
+
+                        return (
+                          <div className="flex flex-col items-end gap-0.5">
+                            {events.slice(-4).map((evt) => {
+                              const desc = describeAgentEvent(evt as AgentEvent);
+                              if (!desc) return null;
                               return (
-                                <a
-                                  key={`${att.path}-${idx}`}
-                                  href={url}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-white/5 hover:bg-white/10 border border-white/10 text-[10px] text-gray-100"
+                                <div
+                                  key={evt.id}
+                                  className={cn(
+                                    "inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#020617] border border-white/10 text-[10px]",
+                                    desc.isError && "border-red-400/60 text-red-200"
+                                  )}
                                 >
-                                  <Paperclip size={10} className="text-purple-300" />
-                                  <span className="truncate max-w-[160px]">{att.name}</span>
-                                </a>
+                                  {renderAgentEventIcon(evt)}
+                                  <span>{desc.text}</span>
+                                </div>
                               );
                             })}
                           </div>
-                        )}
-                      </div>
-
-                      <Avatar className="w-7 h-7 border border-white/10 bg-white/5">
-                        <AvatarFallback className="text-[10px] bg-transparent text-gray-100">
-                          U
-                        </AvatarFallback>
-                      </Avatar>
-                    </>
-                  )}
-                </div>
-
-                {msg.role === 'user' && inlineActivity && inlineActivity.messageId === msg.id && (
-                  <div className="w-full flex flex-col items-end mt-1 space-y-1">
-                    <div className={cn(
-                      "inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#111827] border border-purple-500/40 text-[10px] text-purple-100",
-                      !inlineActivity.done && "animate-pulse"
-                    )}>
-                      <Brain size={10} className="text-purple-300" />
-                      <span>
-                        {inlineActivity.done
-                          ? inlineActivity.aborted
-                            ? "Stopped by user"
-                            : "Thoughts completed"
-                          : inlinePhaseLabel}
-                      </span>
+                        );
+                      })()}
                     </div>
-
-                    {(() => {
-                      const thoughtText = getInlineThoughtText();
-                      if (!thoughtText) return null;
-                      return (
-                        <div className="max-w-[80%] rounded-lg bg-black/40 border border-purple-500/30 px-2 py-1 text-[11px] text-gray-100 font-mono whitespace-pre-wrap break-words">
-                          {thoughtText}
-                        </div>
-                      );
-                    })()}
-
-                    {(() => {
-                      const events = getInlineAgentEvents();
-                      if (!events.length) return null;
-
-                      return (
-                        <div className="flex flex-col items-end gap-0.5">
-                          {events.slice(-4).map((evt) => {
-                            const desc = describeAgentEvent(evt as AgentEvent);
-                            if (!desc) return null;
-                            return (
-                              <div
-                                key={evt.id}
-                                className={cn(
-                                  "inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#020617] border border-white/10 text-[10px]",
-                                  desc.isError && "border-red-400/60 text-red-200"
-                                )}
-                              >
-                                {renderAgentEventIcon(evt)}
-                                <span>{desc.text}</span>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      );
-                    })()}
-                  </div>
-                )}
-              </motion.div>
-            ))}
+                  )}
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="w-72 shrink-0 space-y-2 hidden xl:block">
+          <div className="w-72 shrink-0 space-y-2 hidden xl:block">
             {currentRun && (
               <RunDetailsCard
                 run={currentRun}

@@ -1,12 +1,12 @@
 // Mimiverse IDE - Rust Core Engine
-// Production-ready performance layer inspired by Windsurf's Cascade Engine
+// Production-ready performance layer powered by Mimi Engine
 
 #![cfg_attr(
     all(not(debug_assertions), target_os = "windows"),
     windows_subsystem = "windows"
 )]
 
-mod cascade;
+mod mimi_engine;
 mod file_indexer;
 mod code_analyzer;
 
@@ -20,7 +20,7 @@ use serde::{Deserialize, Serialize};
 pub struct AppState {
     pub workspace_path: Mutex<Option<PathBuf>>,
     pub file_index: Mutex<file_indexer::FileIndex>,
-    pub code_graph: Mutex<cascade::CodeGraph>,
+    pub code_graph: Mutex<mimi_engine::CodeGraph>,
 }
 
 impl Default for AppState {
@@ -28,7 +28,7 @@ impl Default for AppState {
         Self {
             workspace_path: Mutex::new(None),
             file_index: Mutex::new(file_indexer::FileIndex::new()),
-            code_graph: Mutex::new(cascade::CodeGraph::new()),
+            code_graph: Mutex::new(mimi_engine::CodeGraph::new()),
         }
     }
 }

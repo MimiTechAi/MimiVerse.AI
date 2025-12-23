@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 
 const features = [
     {
-        title: "Cascade Engine",
-        description: "An AI architect that sees your entire project. Unlike standard autocomplete, Cascade plans and executes multi-file refactors.",
+        title: "Mimi Engine",
+        description: "An AI architect that sees your entire project. Mimi plans and executes multi-file refactors with precision.",
         icon: Bot,
         className: "md:col-span-2",
         gradient: "from-purple-500/20 to-blue-500/20"

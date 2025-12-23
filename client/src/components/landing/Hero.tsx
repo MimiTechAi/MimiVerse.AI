@@ -147,7 +147,7 @@ export function Hero() {
                         </div>
                         <div className="flex items-center gap-2 px-3 py-1 rounded bg-black/20 border border-white/5 text-xs text-zinc-500 font-mono">
                             <Cpu className="w-3 h-3" />
-                            cascade.rs
+                            mimi_engine.rs
                         </div>
                         <div className="w-12" /> {/* Spacer */}
                     </div>
@@ -160,7 +160,7 @@ export function Hero() {
                             <div className="flex items-center gap-2 text-zinc-300 bg-white/5 p-1 rounded"><Code2 className="w-3 h-3 text-blue-400" /> src</div>
                             <div className="pl-4 space-y-2 text-zinc-500">
                                 <div className="hover:text-zinc-300 transition-colors cursor-pointer">main.rs</div>
-                                <div className="text-purple-400 font-medium">cascade.rs</div>
+                                <div className="text-purple-400 font-medium">mimi_engine.rs</div>
                                 <div className="hover:text-zinc-300 transition-colors cursor-pointer">utils.rs</div>
                             </div>
                         </div>
@@ -194,7 +194,7 @@ export function Hero() {
                             <div className="h-full rounded-xl border border-purple-500/20 bg-purple-500/5 p-4 backdrop-blur-sm flex flex-col">
                                 <div className="flex items-center gap-2 font-mono text-xs text-purple-300 mb-4 pb-2 border-b border-purple-500/10">
                                     <Zap className="w-3 h-3" />
-                                    Cascade AI Reasoning
+                                    Mimi Engine Reasoning
                                 </div>
                                 <div className="space-y-3 flex-1 overflow-hidden">
                                     <div className="text-zinc-400 text-xs">Analysis:</div>

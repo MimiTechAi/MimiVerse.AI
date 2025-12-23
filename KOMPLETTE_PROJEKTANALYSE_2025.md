@@ -253,7 +253,7 @@ interface Message {
 
 **Vergleich mit Cursor/Windsurf:**
 - ✅ **Chat Structure:** Ähnlich zu Cursor Composer
-- ✅ **Thinking Display:** Detaillierter als Windsurf Cascade
+- ✅ **Thinking Display:** High-fidelity reasoning display (Mimi Engine)
 - ✅ **Auto-Fix Integration:** Gleichwertig zu beiden
 - ✅ **Multi-File Context:** Project-weite Operationen
 - ⚠️ **Inline Completions:** Fehlen im Chat (nur im Editor)
@@ -989,7 +989,7 @@ gunzip -t "/backups/db_$(date +%Y%m%d_%H%M%S).sql.gz"
 
 | Feature | Mimiverse | Cursor 2.0 | Windsurf | VSCode + Copilot | SOTA 2025 |
 |---------|-----------|------------|----------|------------------|-----------|
-| **AI Chat** | ✅ Advanced | ✅ Composer | ✅ Cascade | ❌ Limited | ✅ |
+| **AI Chat** | ✅ Advanced | ✅ Composer | ✅ Mimi Engine | ❌ Limited | ✅ |
 | **Multi-File Edits** | ✅ | ✅ | ✅ | ❌ | ✅ |
 | **Inline Completions** | ⚠️ FIM only | ✅ <100ms | ✅ 150ms | ✅ 80ms | ✅ |
 | **MCP Integration** | ⚠️ Skeleton | ⚠️ Limited | ✅ | ❌ | ✅ |
