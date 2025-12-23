@@ -19,8 +19,25 @@ const config: ForgeConfig = {
         appCategoryType: 'public.app-category.developer-tools',
         icon: './assets/icon',
         asar: true,
+        ignore: [
+            /\/\.git($|\/)/,
+            /\/\.github($|\/)/,
+            /\/\.vscode($|\/)/,
+            /\/src-tauri\/target($|\/)/,
+            /\/client\/node_modules($|\/)/,
+            /\/node_modules\/\.cache($|\/)/,
+            /\/\.agent($|\/)/,
+            /\/\.gemini($|\/)/,
+            /package-lock\.json/,
+            /tsconfig\.json/,
+        ],
         // Signing and Notarization
-        osxSign: {},
+        osxSign: {
+            hardenedRuntime: true,
+            entitlements: './entitlements.plist',
+            entitlementsInherit: './entitlements.plist',
+            gatekeeperAssess: false,
+        } as any,
         osxNotarize: process.env.APPLE_ID ? {
             appleId: process.env.APPLE_ID,
             appleIdPassword: process.env.APPLE_ID_PASSWORD!,
