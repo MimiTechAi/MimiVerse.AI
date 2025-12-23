@@ -43,7 +43,7 @@ export function Navbar({ transparent = false }: NavbarProps) {
                     <a href="/features" className="hover:text-white transition-colors" onClick={(e) => { e.preventDefault(); setLocation("/features"); }}>Features</a>
                     <a href="/pricing" className="hover:text-white transition-colors" onClick={(e) => { e.preventDefault(); setLocation("/pricing"); }}>Pricing</a>
                     <a href="/docs" className="hover:text-white transition-colors" onClick={(e) => { e.preventDefault(); setLocation("/docs"); }}>Docs</a>
-                    <a href="https://github.com/mimiverse/ide" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                    <a href="https://github.com/MimiTechAi/MimiVerse.AI" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                         <Github className="w-4 h-4" />
                     </a>
                 </div>
@@ -65,19 +65,16 @@ export function Navbar({ transparent = false }: NavbarProps) {
                         <DropdownMenuContent className="bg-[#1E1E24] border-[#333] text-white min-w-[200px]" align="end">
                             <DropdownMenuLabel>Select Platform</DropdownMenuLabel>
                             <DropdownMenuSeparator className="bg-[#333]" />
-                            <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.open('https://github.com/mimiverse/ide/releases/latest/download/Mimiverse-x64.dmg', '_blank')}>
-                                <Apple className="mr-2 h-4 w-4" /> macOS (Intel)
-                            </DropdownMenuItem>
-                            <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.open('https://github.com/mimiverse/ide/releases/latest/download/Mimiverse-arm64.dmg', '_blank')}>
-                                <Cpu className="mr-2 h-4 w-4" /> macOS (Silicon)
+                            <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.location.href = 'https://github.com/MimiTechAi/MimiVerse.AI/releases/latest/download/Mimiverse.dmg'}>
+                                <Apple className="mr-2 h-4 w-4" /> macOS (Apple Silicon & Intel)
                             </DropdownMenuItem>
                             <DropdownMenuSeparator className="bg-[#333]" />
-                            <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.open('https://github.com/mimiverse/ide/releases/latest/download/Mimiverse-Setup.exe', '_blank')}>
+                            <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.location.href = 'https://github.com/MimiTechAi/MimiVerse.AI/releases/latest/download/Mimiverse-1.0.0.Setup.exe'}>
                                 <Monitor className="mr-2 h-4 w-4" /> Windows
                             </DropdownMenuItem>
                             <DropdownMenuSeparator className="bg-[#333]" />
-                            <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.location.href = '/download/Mimiverse-linux-arm64-1.0.0.zip'}>
-                                <Terminal className="mr-2 h-4 w-4" /> Linux (Direct)
+                            <DropdownMenuItem className="focus:bg-purple-500/20 focus:text-white cursor-pointer" onClick={() => window.location.href = 'https://github.com/MimiTechAi/MimiVerse.AI/releases/latest/download/mimiverse_1.0.0_amd64.deb'}>
+                                <Terminal className="mr-2 h-4 w-4" /> Linux (.deb)
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
