@@ -16,6 +16,9 @@ import { pool } from "./storage";
 
 const app = express();
 
+// Trust proxy for Vercel/Reverse Proxy (required for session cookies over HTTPS)
+app.set("trust proxy", 1);
+
 // Security headers (Helmet.js)
 // Disabled in development to prevent conflicts with Vite HMR
 if (env.NODE_ENV === 'production') {
@@ -139,10 +142,10 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: process.env.NODE_ENV === "production",
+    secure: env.NODE_ENV === "production" || true, // Force secure if on Vercel/HTTPS
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
     httpOnly: true,
-    sameSite: "lax"
+    sameSite: env.NODE_ENV === "production" ? "none" : "lax" // 'none' required for cross-domain if not proxied, but 'lax' usually better for same-domain proxy
   }
 }));
 

@@ -20,28 +20,20 @@ const config: ForgeConfig = {
         icon: './assets/icon',
         asar: true,
         ignore: [
+            /^\/(?!(package\.json|\.vite|assets)(.*))/,
+            /^\/assets\/(?!(icon\.icns|icon\.ico|icon\.png)(.*))/,
             /\/\.git($|\/)/,
             /\/\.github($|\/)/,
             /\/\.vscode($|\/)/,
-            /\/node_modules($|\/)/,
-            /\/src-tauri($|\/)/,
-            /\/triton-models($|\/)/,
-            /\/out($|\/)/,
-            /\/client($|\/)/,
-            /\/server($|\/)/,
-            /\/workspaces($|\/)/,
-            /\/attachments($|\/)/,
-            /\/attached_assets($|\/)/,
-            /\/dist($|\/)/,
-            /package-lock\.json/,
-            /tsconfig\.json/,
         ],
         // Signing and Notarization
         osxSign: {
+            identity: 'Developer ID Application: Michael Bemler (63X96LFZ6Z)', // Explicitly use the certificate from the screenshot
             hardenedRuntime: true,
             entitlements: './entitlements.plist',
             entitlementsInherit: './entitlements.plist',
             gatekeeperAssess: false,
+            'signature-flags': 'library',
         } as any,
         osxNotarize: process.env.APPLE_ID ? {
             appleId: process.env.APPLE_ID,

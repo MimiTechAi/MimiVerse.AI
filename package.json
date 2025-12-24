@@ -155,6 +155,7 @@
     "electron": "^39.2.7",
     "electron-squirrel-startup": "^1.0.1",
     "esbuild": "^0.25.0",
+    "jsonwebtoken": "^9.0.2",
     "png-to-ico": "^3.0.1",
     "png2icns": "^0.0.1",
     "tailwindcss": "^4.1.14",

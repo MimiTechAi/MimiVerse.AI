@@ -43,6 +43,8 @@ jobs:
           APPLE_ID: ${{ secrets.APPLE_ID }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
           APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          APPLE_KEY_ID: ${{ secrets.APPLE_KEY_ID }}
+          APPLE_ISSUER_ID: ${{ secrets.APPLE_ISSUER_ID }}
         run: |
           if [[ "${{ matrix.os }}" == "macos-latest" && "${{ secrets.MACOS_CERTIFICATE }}" != "" ]]; then
             echo "Importing macOS Certificate"
@@ -58,7 +60,15 @@ jobs:
             # Import the certificate
             security import $CERTIFICATE_PATH -P "${{ secrets.MACOS_CERTIFICATE_PWD }}" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
             security list-keychain -d user -s $KEYCHAIN_PATH
+
+            # Setup App Store Connect API Key for async monitoring (if available)
+            if [[ "${{ secrets.APPLE_P8_KEY }}" != "" ]]; then
+              echo "${{ secrets.APPLE_P8_KEY }}" > authkey.p8
+            fi
           fi
+          
+          # Run the build. 
+          # Note: If it still takes 6h, it will cancel, but we can now use scripts/check-notary.js locally.
           npm run electron:make
 
       - name: Upload Artifacts
