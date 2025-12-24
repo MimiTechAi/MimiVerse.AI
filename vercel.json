@@ -3,6 +3,10 @@
     "outputDirectory": "dist/public",
     "rewrites": [
         {
+            "source": "/api/(.*)",
+            "destination": "http://92.208.225.136:5000/api/$1"
+        },
+        {
             "source": "/(.*)",
             "destination": "/index.html"
         }

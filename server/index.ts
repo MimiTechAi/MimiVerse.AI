@@ -1,9 +1,12 @@
+import "dotenv/config";
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import cors from "cors";
 import helmet from "helmet";
 import compression from "compression";
+import memorystore from "memorystore";
+import { AppError, getErrorMessage } from './errors';
 
 // Validate environment variables first, before anything else
 import { env } from "./env";
@@ -111,7 +114,7 @@ app.use(express.json({
 app.use(express.urlencoded({ extended: false }));
 
 const PgSessionStore = pgSession(session);
-const MemoryStore = require('memorystore')(session);
+const MemoryStore = memorystore(session);
 
 // Enforce SESSION_SECRET in production
 const sessionSecret = process.env.SESSION_SECRET;
@@ -199,8 +202,6 @@ app.use((req, res, next) => {
 
   // Centralized error handling middleware (MUST be after all routes)
   app.use((err: unknown, _req: Request, res: Response, _next: NextFunction) => {
-    const { AppError, getErrorMessage } = require('./errors');
-
     // Log error for debugging
     console.error('[Error Handler]', err);
 
@@ -212,7 +213,7 @@ app.use((req, res, next) => {
         error: {
           message: appErr.message,
           code: appErr.code,
-          ...(appErr.details && { details: appErr.details })
+          ...(appErr.details as any && { details: appErr.details })
         }
       });
     }

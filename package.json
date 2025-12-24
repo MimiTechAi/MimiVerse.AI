@@ -8,7 +8,7 @@
   "license": "MIT",
   "main": ".vite/build/main.js",
   "scripts": {
-    "dev:client": "vite dev --port 5000",
+    "dev:client": "vite dev --port 5001",
     "dev": "NODE_ENV=development tsx server/index.ts",
     "dev:all": "concurrently \"npm run dev\" \"npm run dev:client\"",
     "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
@@ -78,6 +78,7 @@
     "cors": "^2.8.5",
     "date-fns": "^3.6.0",
     "diff": "^8.0.2",
+    "dotenv": "^17.2.3",
     "drizzle-orm": "^0.39.3",
     "drizzle-zod": "^0.7.0",
     "embla-carousel-react": "^8.6.0",

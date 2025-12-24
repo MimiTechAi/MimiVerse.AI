@@ -9,6 +9,7 @@ import * as path from 'path';
 import * as os from 'os';
 import Database from 'better-sqlite3';
 import { randomUUID } from 'crypto';
+import fs from "fs";
 
 /**
  * Production-grade Storage Abstraction
@@ -71,8 +72,8 @@ if (usePostgres) {
 if (!usePostgres) {
   console.log('[Storage] 💻 Mode: Desktop/Offline (SQLite)');
   const dataDir = path.join(process.cwd(), '.mimiverse_data');
-  if (!require('fs').existsSync(dataDir)) {
-    require('fs').mkdirSync(dataDir, { recursive: true });
+  if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir, { recursive: true });
   }
 
   const sqlitePath = path.join(dataDir, 'app.db');
