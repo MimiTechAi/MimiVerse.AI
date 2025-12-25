@@ -1,7 +1,7 @@
 {
   "name": "mimiverse-ide",
   "productName": "Mimiverse",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "AI-Powered IDE for Modern Development",
   "author": "Mimi Tech AI <hello@mimiverse.ai>",
